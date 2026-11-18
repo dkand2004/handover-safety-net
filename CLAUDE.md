@@ -3,7 +3,10 @@
 ## Git rules
 - **Do not add attribution lines** to commit messages or pull request descriptions: no `Co-Authored-By`,
   no `Claude-Session`, no "Generated with Claude Code". Write the message and stop.
-- Commit as the identity already configured in this repo. Do not change `user.name` or `user.email`.
+- **Author identity:** before the first commit of every session, set this repo's git identity (a fresh cloud container
+  starts as "Claude", which is wrong here):
+  `git config user.name "Dreshti Kandpal"` and `git config user.email "202130774+dkand2004@users.noreply.github.com"`.
+  Every commit must be authored and committed as Dreshti Kandpal. Never commit as Claude.
 - Never force-push or rewrite history unless the owner explicitly asks.
 - **Before every push:** confirm `.env` is not tracked and scan staged files for API keys or tokens.
 
