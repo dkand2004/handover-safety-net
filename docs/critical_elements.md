@@ -15,3 +15,11 @@ patient summaries. **To be verified against official clinical sources before pub
 | Isolation precautions | "Contact precautions" | Infection spread |
 | Laterality (eye/limb surgery) | "RIGHT eye" | Wrong-site surgery |
 | Pending critical tasks | "Repeat BP in 30 min" | Lost follow-up |
+
+## Added test categories (beyond the elements above)
+These test *how* information is represented, not only whether it is present:
+- **Uncertainty preserved:** suspected or pending items stay tagged as such.
+- **Absent is not negative:** missing information is reported as "not documented".
+- **Most recent wins:** when notes conflict in time, the latest observation is used.
+- **Objective over vague:** subjective phrases are restated as observations or flagged.
+See `problem_onepager.md` for the full failure-mode table.
