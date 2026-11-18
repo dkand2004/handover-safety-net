@@ -24,29 +24,42 @@ this project breaks it into specific, testable failure modes.
 | 13 | **Stale information outranks recent** (an old summary beats a vital-sign drop 20 minutes ago) | Acting on outdated status | Notes with conflicting timestamps: the most recent must win |
 
 ## Evidence status
-- **Verified (read directly):** WHO *Patient Safety Solutions*, vol. 1, solution 3, "Communication
-  During Patient Hand-Overs" (May 2007). It states that breakdown in communication was the leading
-  root cause of sentinel events reported to the Joint Commission (US) from 1995 to 2006, and that in
-  Australia 11% of 25,000 to 30,000 preventable adverse events causing permanent disability were
-  attributed to communication issues. It recommends a standardised approach, including SBAR,
-  read-back, and information on status, medications, treatment plans and advance directives.
-  *These are historical figures (data to 2006); they are not current statistics.*
-- **Not yet verified (could not be read):** Australian Commission on Safety and Quality in Health
-  Care, *OSSIE Guide to Clinical Handover Improvement*; BMJ Open Quality 2024;13(2):e002647;
-  NCBI Bookshelf NBK259589. **To be checked before relying on them.**
-- Blogs and videos are not used as evidence.
+**Verified (read directly from the document):**
+- **ACSQHC (2010), *The OSSIE Guide to Clinical Handover Improvement*, Sydney: Australian Commission on
+  Safety and Quality in Health Care** (ISBN 978-0-9806298-6-6).
+  - States that "failures in clinical handover have been identified as a major preventable cause of patient
+    harm" and that consequences include "unnecessary delays in diagnosis, treatment and care; repeated tests,
+    missed or delayed communication of test results; and incorrect treatment or medication errors".
+  - Reports Australian workplace research finding that "old" or inaccurate observations were frequently
+    handed over, with cases where assistance was not called for patients who deteriorated (supports failure modes 5 and 13).
+  - Cites, from other studies (secondary citation): an Australian emergency-department study in which in
+    15.4% of handovers not all required information was transferred, resulting in adverse events (Ye et al, 2007).
+  - Defines the ISOBAR framework used here (see `handover_framework.md`).
+  - **States that the evidence base is limited:** it lists as unanswered "Which are the most important
+    communications?" and whether they reliably correlate with action. **Our list of critical elements is
+    therefore a reasoned hypothesis, not an evidence-based standard.**
+  - Does **not** discuss allergies, so the allergy failure mode rests on clinical reasoning, not on this source.
+- **WHO (2007), *Patient Safety Solutions*, vol. 1, solution 3, "Communication During Patient Hand-Overs".**
+  States that breakdown in communication was the leading root cause of sentinel events reported to the
+  Joint Commission (US) from 1995 to 2006, and that 11% of 25,000 to 30,000 preventable adverse events causing
+  permanent disability in Australia were attributed to communication issues. Recommends a standardised approach
+  (including SBAR), read-back, and information on status, medications, treatment plans and advance directives.
+- *Both sources are from 2007 to 2010. Their figures are historical, not current statistics.*
+
+**Not yet verified:** BMJ Open Quality 2024;13(2):e002647; NCBI Bookshelf NBK259589.
+Blogs and videos are not used as evidence.
 
 ## Whose workflow
 Nurses and doctors at shift change and ward transfer in a general inpatient ward. Handover is
-commonly structured with a framework. WHO recommends **SBAR**; this project uses **iSoBAR**, a
-framework used in Australian health services: **I**dentify, **S**ituation, **O**bservations,
-**B**ackground, **A**greed plan, **R**ead back. _(Framework origin and use to be cited and verified.)_
+commonly structured with a framework. WHO recommends **SBAR**; this project uses **ISOBAR** as defined in the
+Australian OSSIE Guide: **I**dentification, **S**ituation and status, **O**bservation,
+**B**ackground and history, **A**ssessment and actions, **R**esponsibility and risk management.
 See `handover_framework.md`.
 
 ## What this project does about it
 It does not replace clinical judgement. It asks a narrow, measurable question: **when a handover
 summary is generated automatically from a note, which safety-critical details survive, and which
-are lost, altered or invented?** Three approaches are compared (each producing an iSoBAR summary) against an answer key:
+are lost, altered or invented?** Three approaches are compared (each producing an ISOBAR summary) against an answer key:
 1. **Rule-based baseline:** simple pattern matching.
 2. **LLM only:** Claude summarises the whole note.
 3. **Hybrid (approved):** critical fields (allergies, medications, resuscitation status, observation thresholds) extracted by deterministic code, with the LLM writing only the narrative. The reasoning: a language model can smooth over ambiguity or invent details, so facts that cannot be wrong should not pass through it.

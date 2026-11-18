@@ -8,8 +8,9 @@
 _To be written (see `docs/problem_onepager.md`): information is lost or distorted when care is handed over between clinicians._
 
 ## What this project does
-1. Takes a **synthetic** clinical note and produces an **iSoBAR** handover summary
-   (Identify, Situation, Observations, Background, Agreed plan, Read back).
+1. Takes a **synthetic** clinical note and produces an **ISOBAR** handover summary
+   (Identification, Situation and status, Observation, Background and history, Assessment and actions,
+   Responsibility and risk management), the framework defined in the Australian OSSIE Guide (ACSQHC, 2010).
 2. Does this three ways: a **rule-based** baseline, a **Claude API** version, and a **hybrid** (code extracts critical facts, Claude writes only the narrative).
 3. Runs an automatic **safety-critical element check**: did the summary keep allergies, resuscitation
    status, falls risk, anticoagulants, a deterioration (Q-ADDS) trigger, and, for eye surgery, the correct eye?
