@@ -18,7 +18,7 @@ this project breaks it into specific, testable failure modes.
 | 7 | **Resuscitation status (ARP) missing or wrong** | Inappropriate resuscitation, or none when wanted | ARP status present and correct |
 | 8 | **Laterality or site lost** (which eye or limb) | Wrong-site procedure | Side must appear wherever relevant |
 | 9 | **Baseline status lost** (cognition, mobility, falls risk) | New confusion or a fall goes unrecognised | Baseline and risk flags present |
-| 10 | **Uncertainty collapsed into fact** ("?pneumonia" becomes "pneumonia") | Anchoring on an unconfirmed diagnosis | Items tagged Confirmed / Suspected-Pending / Unverified |
+| 10 | **Uncertainty collapsed into fact** ("?pneumonia" becomes "pneumonia") | Anchoring on an unconfirmed diagnosis | Items tagged Confirmed / Suspected-Pending / Unverified (cf. BRIEF-C's included/excluded differentials) |
 | 11 | **"Not documented" read as "negative"** (no allergy recorded becomes "no allergies") | False reassurance carried to later shifts | Absent information is reported as *not documented*, never as normal or negative |
 | 12 | **Vague or subjective language passes through** ("seems fine", "rough night") | Actionable detail is never communicated | Output restates observations as objective values, or flags the gap |
 | 13 | **Stale information outranks recent** (an old summary beats a vital-sign drop 20 minutes ago) | Acting on outdated status | Notes with conflicting timestamps: the most recent must win |
@@ -44,9 +44,20 @@ this project breaks it into specific, testable failure modes.
   Joint Commission (US) from 1995 to 2006, and that 11% of 25,000 to 30,000 preventable adverse events causing
   permanent disability in Australia were attributed to communication issues. Recommends a standardised approach
   (including SBAR), read-back, and information on status, medications, treatment plans and advance directives.
+- **Altabbaa G, Beran TN, Clark M, Paolucci EO (2024). "Improving clinical reasoning and communication during
+  handover: An intervention study of the BRIEF-C tool." *BMJ Open Quality* 13:e002647.
+  doi:10.1136/bmjoq-2023-002647.** A peer-reviewed pre-post study (Calgary, Canada) of a structured handover tool.
+  - Reports that miscommunication is known to occur in handovers and improves when a tool structures the information,
+    and that most structured tools have limited evidence of validity and have been tested mainly in simulation.
+  - The tool, BRIEF-C, was designed around cognitive bias theory and asks the sender to state the responsible
+    diagnosis plus the **differential diagnoses included and excluded**. This supports our uncertainty-tagging
+    approach (failure mode 10): keeping doubt visible, not collapsing it into a single confident diagnosis.
+  - Rated real audio-recorded handovers using two blinded faculty raters (a design we could imitate with a small human review).
+  - **Limits stated by the authors:** one tertiary hospital, sites and participants not randomly chosen, no comparison group. It is a Canadian
+    study of verbal handover and does not address allergies or medications.
 - *Both sources are from 2007 to 2010. Their figures are historical, not current statistics.*
 
-**Not yet verified:** BMJ Open Quality 2024;13(2):e002647; NCBI Bookshelf NBK259589.
+**Not yet verified:** NCBI Bookshelf NBK259589.
 Blogs and videos are not used as evidence.
 
 ## Whose workflow
