@@ -8,12 +8,12 @@
 _To be written (see `docs/problem_onepager.md`): information is lost or distorted when care is handed over between clinicians._
 
 ## What this project does
-1. Takes a **synthetic** clinical note and produces an **SBAR** handover summary
-   (Situation, Background, Assessment, Recommendation).
-2. Does this two ways: a **Claude API** version and a simple **rule-based** baseline.
+1. Takes a **synthetic** clinical note and produces an **iSoBAR** handover summary
+   (Identify, Situation, Observations, Background, Agreed plan, Read back).
+2. Does this three ways: a **rule-based** baseline, a **Claude API** version, and a **hybrid** (code extracts critical facts, Claude writes only the narrative).
 3. Runs an automatic **safety-critical element check**: did the summary keep allergies, resuscitation
    status, falls risk, anticoagulants, a deterioration (Q-ADDS) trigger, and, for eye surgery, the correct eye?
-4. Compares the two methods on how often critical items are kept or lost.
+4. Compares the three methods on how often critical items are kept, altered or lost.
 
 ## Safety, privacy and ethics
 - **Synthetic notes only.** No real patient data, no real hospital names, no screenshots of real systems.

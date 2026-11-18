@@ -38,16 +38,18 @@ this project breaks it into specific, testable failure modes.
 
 ## Whose workflow
 Nurses and doctors at shift change and ward transfer in a general inpatient ward. Handover is
-commonly structured with a framework; this project uses **SBAR**. Australian services also
-commonly use **ISBAR**, which adds an *Identify* step. _Decision pending._
+commonly structured with a framework. WHO recommends **SBAR**; this project uses **iSoBAR**, a
+framework used in Australian health services: **I**dentify, **S**ituation, **O**bservations,
+**B**ackground, **A**greed plan, **R**ead back. _(Framework origin and use to be cited and verified.)_
+See `handover_framework.md`.
 
 ## What this project does about it
 It does not replace clinical judgement. It asks a narrow, measurable question: **when a handover
 summary is generated automatically from a note, which safety-critical details survive, and which
-are lost, altered or invented?** Three approaches are compared against an answer key:
+are lost, altered or invented?** Three approaches are compared (each producing an iSoBAR summary) against an answer key:
 1. **Rule-based baseline:** simple pattern matching.
 2. **LLM only:** Claude summarises the whole note.
-3. **Hybrid (design option, decision pending):** critical fields (allergies, medications, resuscitation status, observation thresholds) extracted by deterministic code, with the LLM writing only the narrative. The reasoning: a language model can smooth over ambiguity or invent details, so facts that cannot be wrong should not pass through it.
+3. **Hybrid (approved):** critical fields (allergies, medications, resuscitation status, observation thresholds) extracted by deterministic code, with the LLM writing only the narrative. The reasoning: a language model can smooth over ambiguity or invent details, so facts that cannot be wrong should not pass through it.
 
 ## Risks specific to AI summaries (and how the design responds)
 | Risk | Design response |
