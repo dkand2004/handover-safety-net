@@ -1,0 +1,5 @@
+# Python libraries for this project (minimum versions; pin once everything works)
+anthropic>=0.40      # official Claude API client
+python-dotenv>=1.0   # reads the API key and settings from .env
+pandas>=2.0          # tabulating evaluation results
+pytest>=8.0          # tests for the safety-check logic
