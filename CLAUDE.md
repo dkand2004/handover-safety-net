@@ -24,6 +24,7 @@
 - Explain what you are about to do and why, and summarise afterwards. Define new terms in plain language.
 - Do not make design, tooling, model or naming decisions silently: present options, recommend one, and wait for the answer.
 - Go step by step; keep it a small prototype.
+- **Sanity-check before instructing:** before asking the owner to build or run anything (a metric, a check, a prompt, an evaluation), test the idea on a small sample of the data first and report what the check found.
 - Comments in code should explain *why*, not only *what*.
 
 ## Project facts worth knowing
