@@ -31,3 +31,4 @@
 - Framework: ISOBAR as defined in the OSSIE Guide (ACSQHC, 2010); see `docs/handover_framework.md`.
 - Three arms are compared: rule-based baseline, Claude only, and a hybrid (code extracts critical facts, the LLM writes only the narrative).
 - Evaluation is strict: doses must match exactly, "not documented" must never become "negative", doubt must stay visible.
+- The owner wants to be able to explain this project: keep `docs/how_it_works.md` accurate and complete its [TO COMPLETE] sections as things are built. A short demo video (one scenario) is a stretch goal; see `docs/TODO.md`.
