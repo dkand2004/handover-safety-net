@@ -10,7 +10,8 @@
 - [x] `docs/scenario_plan.md` approved: 18 notes (second notes N16 to N18 added); owner writes N10 and N11
 - [x] Answer-key format v2 approved in principle and tested (`docs/answer_key_format.md`, `src/check_facts.py`, 12 tests)
 - [x] Decided: structured outputs with a `certainty` field per item; targeted human review (all 'altered', critical disagreements between approaches, ~10 random 'kept'); run each note once and repeat 3x on 4 notes
-- [ ] Owner writes N10 and N11 using `docs/note_template.md`
+- [x] Owner wrote N10 and N11 (`data/synthetic_notes/`); keys converted and tested (`data/answer_keys/`, `tests/test_owner_notes.py`)
+- [ ] Owner to review the N10/N11 points raised in chat (timing in N11, ARP wording, ARP section, codeine label, key splits)
 - [ ] Pilot: N05, N10 and N11 with answer keys
 - [ ] Remaining notes and keys
 - [ ] Rule-based baseline, Claude arm, hybrid arm, scoring, tests, results

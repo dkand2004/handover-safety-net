@@ -1,0 +1,247 @@
+{
+ "note_id": "N10",
+ "failure_modes": [
+  12,
+  5
+ ],
+ "_comment": "Converted from the owner's answer key. Her 7 facts are split into smaller checks; wordings are initial proposals for her review.",
+ "facts": [
+  {
+   "id": "N10-F1",
+   "category": "deterioration",
+   "section": "O",
+   "severity": "critical",
+   "description": "Q-ADDS reached 4 at 06:00",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "q-adds 4",
+      "q-adds: 4",
+      "q-adds of 4",
+      "q-adds score 4",
+      "q-adds score of 4",
+      "qadds 4"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N10-F2",
+   "category": "deterioration",
+   "section": "O",
+   "severity": "critical",
+   "description": "HR 116 and RR 22 at 06:00 (tachycardia, tachypnoea)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "116"
+     ],
+     [
+      "rr 22",
+      "resp rate 22",
+      "respiratory rate 22",
+      "rr: 22",
+      "22 breaths",
+      "tachypno"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N10-F3",
+   "category": "deterioration",
+   "section": "O",
+   "severity": "critical",
+   "description": "Observations are worsening overnight (not improving)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "rising",
+      "increasing",
+      "trending up",
+      "worsening",
+      "deteriorat",
+      "escalat",
+      "up from",
+      "increased"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N10-F4",
+   "category": "objective_value",
+   "section": "O",
+   "severity": "critical",
+   "description": "Temperature 38.4 and rising overnight (37.6, 38.1, 38.4)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "38.4"
+     ],
+     [
+      "rising",
+      "trending up",
+      "increasing",
+      "up from",
+      "febrile",
+      "increased"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N10-F5",
+   "category": "pending",
+   "section": "R",
+   "severity": "critical",
+   "description": "Surgical RMO (Dr Patel) paged 06:10, review/callback awaited",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "patel",
+      "rmo"
+     ],
+     [
+      "paged",
+      "awaiting",
+      "awaited",
+      "callback",
+      "pending",
+      "review"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N10-F6",
+   "category": "pending",
+   "section": "R",
+   "severity": "important",
+   "description": "Blood cultures and FBC/EUC/CRP due 06:30",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "blood culture"
+     ],
+     [
+      "06:30",
+      "due",
+      "pending",
+      "awaiting",
+      "to be collected"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N10-F7",
+   "category": "allergy",
+   "section": "B",
+   "severity": "critical",
+   "description": "Codeine reaction (severe nausea and vomiting)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "codeine"
+     ],
+     [
+      "nausea",
+      "vomiting",
+      "n&v",
+      "n/v"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N10-F8",
+   "category": "objective_value",
+   "section": "O",
+   "severity": "important",
+   "description": "Pain 7/10 earlier, now 4/10 on movement",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "7/10"
+     ],
+     [
+      "4/10"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N10-F9",
+   "category": "medication",
+   "section": "A",
+   "severity": "important",
+   "description": "Oxycodone IR 5 mg PO PRN last given",
+   "check": {
+    "type": "dose",
+    "drug": [
+     "oxycodone"
+    ],
+    "amount": 5,
+    "unit": "mg"
+   }
+  },
+  {
+   "id": "N10-F10",
+   "category": "last_given",
+   "section": "A",
+   "severity": "important",
+   "description": "Last PRN oxycodone and ondansetron given at 01:40",
+   "check": {
+    "type": "exact",
+    "value": "01:40"
+   }
+  },
+  {
+   "id": "N10-F11",
+   "category": "objective_value",
+   "section": "S",
+   "severity": "important",
+   "description": "About 3 hours' sleep, woke 3 times",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "3 hours",
+      "3 hrs",
+      "3hrs",
+      "three hours",
+      "~3 h"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N10-F12",
+   "category": "vague_language",
+   "section": "S",
+   "severity": "critical",
+   "description": "The summary must not describe the patient as stable or much improved overall (PROPOSED check; subjective phrases are allowed when quoted)",
+   "check": {
+    "type": "none_of",
+    "phrases": [
+     "clinically stable",
+     "is stable",
+     "remains stable",
+     "much improved",
+     "overall improved",
+     "improving overall",
+     "doing well"
+    ]
+   }
+  }
+ ]
+}

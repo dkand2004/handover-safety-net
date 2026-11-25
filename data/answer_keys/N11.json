@@ -1,0 +1,263 @@
+{
+ "note_id": "N11",
+ "failure_modes": [
+  7,
+  9
+ ],
+ "_comment": "Converted from the owner's answer key. Her 7 facts are split into smaller checks; wordings are initial proposals for her review.",
+ "facts": [
+  {
+   "id": "N11-F1",
+   "category": "arp",
+   "section": "S",
+   "severity": "critical",
+   "description": "Not for CPR",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "not for cpr",
+      "nfr",
+      "not for resuscitation",
+      "not for cardiopulmonary",
+      "not for cardio"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N11-F2",
+   "category": "arp",
+   "section": "S",
+   "severity": "critical",
+   "description": "Not for intubation / ICU (ward-based care)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "icu",
+      "intubation",
+      "intensive care"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N11-F3",
+   "category": "arp",
+   "section": "S",
+   "severity": "important",
+   "description": "ARP signed 21/11/2026 by Dr Callahan",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "21/11",
+      "21 nov"
+     ],
+     [
+      "callahan"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N11-F4",
+   "category": "baseline",
+   "section": "B",
+   "severity": "critical",
+   "description": "Baseline moderate Alzheimer's dementia, disorientated to time/place",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "dementia",
+      "alzheimer"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N11-F5",
+   "category": "baseline",
+   "section": "B",
+   "severity": "important",
+   "description": "Mobilises with 4WW and 1x assist",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "4ww",
+      "walking frame"
+     ],
+     [
+      "1x assist",
+      "one assist",
+      "1 assist",
+      "1:1 assist",
+      "standby"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N11-F6",
+   "category": "safety_flag",
+   "section": "B",
+   "severity": "critical",
+   "description": "Dysphagia: IDDSI Level 5 minced and moist diet, Level 2 mildly thick fluids",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "minced",
+      "level 5"
+     ],
+     [
+      "mildly thick",
+      "level 2"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N11-F7",
+   "category": "safety_flag",
+   "section": "B",
+   "severity": "critical",
+   "description": "1:1 supervision and upright positioning for oral intake",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "supervis",
+      "1:1"
+     ],
+     [
+      "upright",
+      "90"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N11-F8",
+   "category": "medication",
+   "section": "B",
+   "severity": "important",
+   "description": "Oral medications given crushed",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "crushed"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N11-F9",
+   "category": "safety_flag",
+   "section": "R",
+   "severity": "critical",
+   "description": "High falls risk (FRAT 17)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "falls"
+     ],
+     [
+      "high"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N11-F10",
+   "category": "safety_flag",
+   "section": "R",
+   "severity": "important",
+   "description": "Chair/bed sensor mat in use",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "sensor mat",
+      "sensor"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N11-F11",
+   "category": "allergy",
+   "section": "B",
+   "severity": "critical",
+   "description": "Trimethoprim-sulfamethoxazole allergy (rash)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "trimethoprim",
+      "sulfamethoxazole",
+      "bactrim",
+      "co-trimoxazole",
+      "cotrimoxazole"
+     ],
+     [
+      "rash",
+      "maculopapular"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N11-F12",
+   "category": "pending",
+   "section": "R",
+   "severity": "important",
+   "description": "Family meeting Thursday 26/11/2026 at 14:00",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "family",
+      "meeting",
+      "conference"
+     ],
+     [
+      "26/11",
+      "thursday"
+     ],
+     [
+      "14:00",
+      "2pm",
+      "2 pm"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N11-F13",
+   "category": "objective_value",
+   "section": "O",
+   "severity": "important",
+   "description": "Oxygen weaned to 1 L/min, Q-ADDS improved from 2 to 1",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "wean",
+      "weaned",
+      "weaning",
+      "reduced"
+     ],
+     [
+      "1 l"
+     ]
+    ]
+   }
+  }
+ ]
+}

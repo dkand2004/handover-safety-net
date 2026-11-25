@@ -10,7 +10,8 @@ from pathlib import Path
 
 SECTIONS = {"I", "S", "O", "B", "A", "R"}          # ISOBAR sections
 CATEGORIES = {"allergy", "medication", "last_given", "med_change", "deterioration", "pending", "arp",
-              "laterality", "baseline", "uncertainty", "not_documented", "objective_value", "isolation", "device"}
+              "laterality", "baseline", "uncertainty", "not_documented", "objective_value", "isolation", "device",
+              "safety_flag", "vague_language"}
 # Each check type and the fields it requires:
 #   all_of_groups: "groups" = list of lists; every group needs at least one wording present (AND of ORs)
 #   none_of      : none of "phrases" may appear (e.g. 'no known allergies' when allergies are not documented)
