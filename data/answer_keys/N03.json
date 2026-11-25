@@ -136,7 +136,7 @@
    "category": "objective_value",
    "section": "O",
    "severity": "important",
-   "description": "Oxygen 2 L/min via nasal prongs started 12:30",
+   "description": "Oxygen 2 L/min via nasal prongs started 14:15",
    "check": {
     "type": "all_of_groups",
     "groups": [
@@ -158,13 +158,13 @@
    "category": "medication",
    "section": "A",
    "severity": "important",
-   "description": "Azithromycin 500 mg IV daily",
+   "description": "Moxifloxacin 400 mg IV daily",
    "check": {
     "type": "dose",
     "drug": [
-     "azithromycin"
+     "moxifloxacin"
     ],
-    "amount": 500,
+    "amount": 400,
     "unit": "mg"
    }
   },
@@ -173,12 +173,12 @@
    "category": "last_given",
    "section": "A",
    "severity": "important",
-   "description": "Azithromycin last given 09:30 on 24/11",
+   "description": "Moxifloxacin last given 09:30 on 24/11",
    "check": {
     "type": "all_of_groups",
     "groups": [
      [
-      "azithromycin"
+      "moxifloxacin"
      ],
      [
       "09:30",

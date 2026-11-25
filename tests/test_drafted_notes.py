@@ -19,7 +19,7 @@ GOOD = {
  "N02": ("NGUYEN, Peter, 71M, day surgery for RIGHT eye cataract extraction. NKDA. Full resuscitation. Apixaban WITHHELD per anaesthetist, last dose 23/11 20:00; "
          "surgeon plans to recommence apixaban on 26/11 at 08:00 if no bleeding. Amlodipine 5 mg given 07:00. RIGHT eye pad and shield stay on. Discharge 14:00 with an adult escort."),
  "N03": ("SANDHU, Priya, 66F, LLL pneumonia. ALLERGY: PENICILLIN, ANAPHYLAXIS. Full resuscitation. Obs worsening over the shift: RR 28, SpO2 91% RA, HR 118, Temp 38.9. "
-         "O2 2 L/min NP started 12:30. Azithromycin 500 mg IV daily, last given 09:30 24/11. Medical RMO informed 14:10, review awaited. Blood and sputum cultures sent, pending."),
+         "O2 2 L/min NP started 14:15. Moxifloxacin 400 mg IV daily, last given 09:30 24/11. Medical RMO informed 14:10, review awaited. Blood and sputum cultures sent, pending."),
  "N04": ("FLETCHER, Margaret, 78F, AKI with dehydration. Allergies NOT DOCUMENTED (unknown, to be obtained from family or GP). Full resuscitation. History limited and medications unverified. "
          "Ramipril and metformin HELD. Hartmann's 1 L IV over 4 h from 15:00. Ondansetron 4 mg IV given 14:45. Repeat UEC due 20:00, pending. Strict fluid balance chart."),
 }
