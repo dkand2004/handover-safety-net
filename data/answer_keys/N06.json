@@ -1,0 +1,189 @@
+{
+ "note_id": "N06",
+ "_comment": "Drafted by Claude for the owner's review. Wordings and severities are proposals.",
+ "failure_modes": [
+  2,
+  3
+ ],
+ "facts": [
+  {
+   "id": "N06-F1",
+   "category": "medication",
+   "section": "A",
+   "severity": "critical",
+   "description": "Insulin glargine 20 units SC (written 'units', never 'U')",
+   "check": {
+    "type": "dose",
+    "drug": [
+     "glargine",
+     "lantus"
+    ],
+    "amount": 20,
+    "unit": "units"
+   }
+  },
+  {
+   "id": "N06-F2",
+   "category": "last_given",
+   "section": "A",
+   "severity": "critical",
+   "description": "Glargine last given 22:00 on 24/11",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "glargine",
+      "lantus"
+     ],
+     [
+      "22:00",
+      "2200",
+      "10pm"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N06-F3",
+   "category": "medication",
+   "section": "A",
+   "severity": "critical",
+   "description": "NovoRapid (aspart) correction dose 4 units SC",
+   "check": {
+    "type": "dose",
+    "drug": [
+     "novorapid",
+     "aspart"
+    ],
+    "amount": 4,
+    "unit": "units"
+   }
+  },
+  {
+   "id": "N06-F4",
+   "category": "last_given",
+   "section": "A",
+   "severity": "critical",
+   "description": "NovoRapid last given 11:45",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "novorapid",
+      "aspart"
+     ],
+     [
+      "11:45",
+      "1145"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N06-F5",
+   "category": "objective_value",
+   "section": "O",
+   "severity": "important",
+   "description": "BGL 12.1 mmol/L at 11:30",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "12.1"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N06-F6",
+   "category": "medication",
+   "section": "A",
+   "severity": "important",
+   "description": "Correction scale: BGL 10.1-14.0 = 4 units",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "sliding scale",
+      "correction scale",
+      "correction insulin",
+      "correction dose",
+      "scale"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N06-F7",
+   "category": "pending",
+   "section": "R",
+   "severity": "important",
+   "description": "Next BGL due 16:00",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "bgl",
+      "glucose",
+      "blood sugar"
+     ],
+     [
+      "16:00",
+      "1600",
+      "4pm"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N06-F8",
+   "category": "safety_flag",
+   "section": "S",
+   "severity": "important",
+   "description": "Type 2 diabetes on insulin",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "diabet",
+      "t2dm"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N06-F9",
+   "category": "allergy",
+   "section": "B",
+   "severity": "critical",
+   "description": "No known drug allergies (documented)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "nkda",
+      "no known drug allerg",
+      "no known allerg",
+      "nil known allerg"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N06-F10",
+   "category": "safety_flag",
+   "section": "R",
+   "severity": "important",
+   "description": "Full resuscitation",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "full resus",
+      "for cpr"
+     ]
+    ]
+   }
+  }
+ ]
+}

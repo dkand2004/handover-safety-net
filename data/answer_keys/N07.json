@@ -1,0 +1,205 @@
+{
+ "note_id": "N07",
+ "_comment": "Drafted by Claude for the owner's review. Wordings and severities are proposals.",
+ "failure_modes": [
+  2,
+  3
+ ],
+ "facts": [
+  {
+   "id": "N07-F1",
+   "category": "medication",
+   "section": "A",
+   "severity": "critical",
+   "description": "Oxycodone IR 5 mg",
+   "check": {
+    "type": "dose",
+    "drug": [
+     "oxycodone"
+    ],
+    "amount": 5,
+    "unit": "mg"
+   }
+  },
+  {
+   "id": "N07-F2",
+   "category": "medication",
+   "section": "A",
+   "severity": "important",
+   "description": "Oxycodone route is oral (PO)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "oxycodone"
+     ],
+     [
+      "po",
+      "oral",
+      "orally",
+      "by mouth"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N07-F3",
+   "category": "medication",
+   "section": "A",
+   "severity": "important",
+   "description": "Oxycodone is PRN, 4-hourly",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "prn",
+      "as needed",
+      "as required"
+     ],
+     [
+      "4-hourly",
+      "4 hourly",
+      "q4h",
+      "four hourly",
+      "four-hourly"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N07-F4",
+   "category": "last_given",
+   "section": "A",
+   "severity": "critical",
+   "description": "Oxycodone last given 13:10",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "oxycodone"
+     ],
+     [
+      "13:10",
+      "1310",
+      "1:10pm"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N07-F5",
+   "category": "medication",
+   "section": "A",
+   "severity": "critical",
+   "description": "Paracetamol 1 g",
+   "check": {
+    "type": "dose",
+    "drug": [
+     "paracetamol"
+    ],
+    "amount": 1,
+    "unit": "g"
+   }
+  },
+  {
+   "id": "N07-F6",
+   "category": "last_given",
+   "section": "A",
+   "severity": "critical",
+   "description": "Paracetamol last given 12:00 (next due 18:00)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "paracetamol"
+     ],
+     [
+      "12:00",
+      "1200"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N07-F7",
+   "category": "medication",
+   "section": "A",
+   "severity": "important",
+   "description": "Paracetamol is regular, 4 g maximum in 24 h",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "paracetamol"
+     ],
+     [
+      "4 g",
+      "4g",
+      "qid",
+      "regular",
+      "6-hourly",
+      "6 hourly"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N07-F8",
+   "category": "allergy",
+   "section": "B",
+   "severity": "critical",
+   "description": "NSAIDs / ibuprofen cause an asthma exacerbation (avoid)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "nsaid",
+      "ibuprofen",
+      "anti-inflammator"
+     ],
+     [
+      "asthma",
+      "bronchospasm",
+      "wheez"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N07-F9",
+   "category": "objective_value",
+   "section": "O",
+   "severity": "important",
+   "description": "Drowsy after the 13:10 dose (sedation score 1), rousable",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "drows",
+      "sedat",
+      "sleepy"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N07-F10",
+   "category": "pending",
+   "section": "R",
+   "severity": "important",
+   "description": "Discharge tomorrow if pain remains controlled",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "discharge"
+     ],
+     [
+      "tomorrow",
+      "26/11"
+     ]
+    ]
+   }
+  }
+ ]
+}

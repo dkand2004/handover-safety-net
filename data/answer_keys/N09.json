@@ -1,0 +1,218 @@
+{
+ "note_id": "N09",
+ "_comment": "Drafted by Claude for the owner's review. Wordings and severities are proposals.",
+ "failure_modes": [
+  13,
+  5
+ ],
+ "facts": [
+  {
+   "id": "N09-F1",
+   "category": "vague_language",
+   "section": "O",
+   "severity": "critical",
+   "description": "The latest temperature 38.6 C wins; the patient must not be described as currently afebrile",
+   "check": {
+    "type": "latest_wins",
+    "value": [
+     "38.6"
+    ],
+    "stale": [
+     "is afebrile",
+     "remains afebrile",
+     "currently afebrile",
+     "afebrile today",
+     "afebrile and",
+     "no fever",
+     "apyrexial",
+     "remains apyrexial"
+    ]
+   }
+  },
+  {
+   "id": "N09-F2",
+   "category": "deterioration",
+   "section": "A",
+   "severity": "critical",
+   "description": "Febrile with rigors",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "febrile",
+      "fever",
+      "rigor",
+      "temp 38",
+      "temperature 38"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N09-F3",
+   "category": "deterioration",
+   "section": "A",
+   "severity": "important",
+   "description": "Latest Q-ADDS is 3",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "q-adds 3",
+      "qadds 3",
+      "q-adds of 3",
+      "q adds 3",
+      "score of 3",
+      "score 3",
+      "q-adds: 3",
+      "qadds: 3"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N09-F4",
+   "category": "pending",
+   "section": "R",
+   "severity": "critical",
+   "description": "Repeat blood cultures sent 15:45, PENDING",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "culture"
+     ],
+     [
+      "pending",
+      "awaiting",
+      "awaited",
+      "outstanding",
+      "sent"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N09-F5",
+   "category": "med_change",
+   "section": "R",
+   "severity": "important",
+   "description": "Discharge plan is ON HOLD",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "discharge"
+     ],
+     [
+      "hold",
+      "postponed",
+      "deferred",
+      "delayed",
+      "cancelled",
+      "not tomorrow",
+      "not be discharged"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N09-F6",
+   "category": "pending",
+   "section": "R",
+   "severity": "important",
+   "description": "Medical RMO review requested 15:40",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "rmo",
+      "medical team",
+      "medical review",
+      "registrar",
+      "doctor",
+      "review"
+     ],
+     [
+      "requested",
+      "informed",
+      "notified",
+      "awaiting",
+      "pending",
+      "paged"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N09-F7",
+   "category": "medication",
+   "section": "A",
+   "severity": "important",
+   "description": "Ceftriaxone 2 g IV daily",
+   "check": {
+    "type": "dose",
+    "drug": [
+     "ceftriaxone"
+    ],
+    "amount": 2,
+    "unit": "g"
+   }
+  },
+  {
+   "id": "N09-F8",
+   "category": "last_given",
+   "section": "A",
+   "severity": "important",
+   "description": "Ceftriaxone last given 08:00",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "ceftriaxone"
+     ],
+     [
+      "08:00",
+      "0800",
+      "8am"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N09-F9",
+   "category": "allergy",
+   "section": "B",
+   "severity": "critical",
+   "description": "Sulfonamide allergy (rash)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "sulfonamide",
+      "sulphonamide"
+     ],
+     [
+      "rash"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N09-F10",
+   "category": "safety_flag",
+   "section": "R",
+   "severity": "important",
+   "description": "Full resuscitation",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "full resus",
+      "for cpr"
+     ]
+    ]
+   }
+  }
+ ]
+}

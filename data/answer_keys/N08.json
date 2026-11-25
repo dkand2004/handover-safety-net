@@ -1,0 +1,262 @@
+{
+ "note_id": "N08",
+ "_comment": "Drafted by Claude for the owner's review. Wordings and severities are proposals.",
+ "failure_modes": [
+  5,
+  13
+ ],
+ "facts": [
+  {
+   "id": "N08-F1",
+   "category": "deterioration",
+   "section": "A",
+   "severity": "critical",
+   "description": "Latest Q-ADDS is 10",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "q-adds 10",
+      "qadds 10",
+      "q-adds of 10",
+      "q adds 10",
+      "score of 10",
+      "score 10",
+      "qadds: 10",
+      "q-adds: 10",
+      "now 10",
+      "up to 10",
+      "rose to 10",
+      "rising to 10",
+      "to 10 at",
+      "\u2192 10",
+      "-> 10",
+      "reached 10",
+      "score 10 at"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N08-F2",
+   "category": "deterioration",
+   "section": "A",
+   "severity": "critical",
+   "description": "The trend is a rise over the shift (0 -> 2 -> 5 -> 10)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "rising",
+      "worsen",
+      "deteriorat",
+      "increas",
+      "escalat",
+      "trend"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N08-F3",
+   "category": "deterioration",
+   "section": "A",
+   "severity": "critical",
+   "description": "MET call made at 15:40",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "met call",
+      "met team",
+      "medical emergency team",
+      "met activat",
+      "called a met",
+      "met was called",
+      "rapid response"
+     ],
+     [
+      "15:40",
+      "1540",
+      "3:40pm"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N08-F4",
+   "category": "vague_language",
+   "section": "S",
+   "severity": "critical",
+   "description": "The summary must not describe the patient as stable (the 06:30 entry is stale)",
+   "check": {
+    "type": "none_of",
+    "phrases": [
+     "clinically stable",
+     "is stable",
+     "remains stable",
+     "stable overnight",
+     "currently stable",
+     "obs within normal limits",
+     "stable and"
+    ]
+   }
+  },
+  {
+   "id": "N08-F5",
+   "category": "pending",
+   "section": "R",
+   "severity": "critical",
+   "description": "Urgent CT abdomen/pelvis requested but NOT yet done",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "ct"
+     ],
+     [
+      "not yet",
+      "pending",
+      "requested",
+      "awaiting",
+      "outstanding",
+      "urgent"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N08-F6",
+   "category": "uncertainty",
+   "section": "S",
+   "severity": "important",
+   "description": "Possible anastomotic leak or sepsis (suspected, not confirmed)",
+   "check": {
+    "type": "tag",
+    "target": [
+     "anastomotic leak",
+     "sepsis"
+    ],
+    "tag": "Suspected-Pending",
+    "forbid": [
+     "confirmed anastomotic leak",
+     "confirmed sepsis",
+     "has sepsis",
+     "anastomotic leak confirmed",
+     "diagnosed with sepsis"
+    ]
+   }
+  },
+  {
+   "id": "N08-F7",
+   "category": "objective_value",
+   "section": "O",
+   "severity": "important",
+   "description": "Latest BP 94/58 and HR 124",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "94/58",
+      "94 systolic",
+      "bp 94",
+      "sbp 94"
+     ],
+     [
+      "124"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N08-F8",
+   "category": "objective_value",
+   "section": "O",
+   "severity": "important",
+   "description": "Oxygen 4 L/min nasal prongs, SpO2 91%",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "4 l",
+      "4l",
+      "4 litres"
+     ],
+     [
+      "91%",
+      "91 %",
+      "spo2 91",
+      "sat 91",
+      "sats 91"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N08-F9",
+   "category": "medication",
+   "section": "A",
+   "severity": "important",
+   "description": "Hartmann's 500 mL IV bolus",
+   "check": {
+    "type": "dose",
+    "drug": [
+     "hartmann"
+    ],
+    "amount": 500,
+    "unit": "ml"
+   }
+  },
+  {
+   "id": "N08-F10",
+   "category": "pending",
+   "section": "R",
+   "severity": "important",
+   "description": "ICU review requested",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "icu",
+      "intensive care",
+      "critical care"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N08-F11",
+   "category": "allergy",
+   "section": "B",
+   "severity": "critical",
+   "description": "No known drug allergies (documented)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "nkda",
+      "no known drug allerg",
+      "no known allerg",
+      "nil known allerg"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N08-F12",
+   "category": "safety_flag",
+   "section": "R",
+   "severity": "important",
+   "description": "Full resuscitation",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "full resus",
+      "for cpr"
+     ]
+    ]
+   }
+  }
+ ]
+}
