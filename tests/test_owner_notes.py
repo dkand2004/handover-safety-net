@@ -21,7 +21,7 @@ BAD10 = "Rough night, seems a bit better, doing ok. Clinically stable and much i
 GOOD11 = ("KOWALSKI, Margaret, 86F, Medical Ward 2A bed 6. RLL community-acquired pneumonia with delirium. Allergy: trimethoprim-sulfamethoxazole (rash). "
           "Not for CPR; not for intubation or ICU; ward-based care. ARP signed 21/11/2026 by Dr M. Callahan. Baseline moderate Alzheimer's dementia, disorientated to time and place, "
           "needs slow single-step prompts. Mobilises with 4WW and 1x assist. Dysphagia: IDDSI Level 5 minced and moist diet, IDDSI Level 2 mildly thick fluids, upright with 1:1 supervision, "
-          "medications crushed. High falls risk (FRAT 17), chair sensor mat active. O2 weaned to 1 L/min NP, SpO2 95%, Q-ADDS 1 at 12:00 (from 2). "
+          "medications crushed. High falls risk (FRAT 17), chair sensor mat active. O2 weaned to 1 L/min NP, SpO2 95%, Q-ADDS 0 at 12:00 (from 1). "
           "Family meeting Thursday 26/11/2026 at 14:00 with daughter Claire (EPOA), Dr K. Nair and SW S. Lim.")
 BAD11 = "86F with pneumonia, for full resuscitation. Mobilises independently, normal diet and fluids."
 

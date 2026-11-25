@@ -243,7 +243,7 @@
    "category": "objective_value",
    "section": "O",
    "severity": "important",
-   "description": "Oxygen weaned to 1 L/min, Q-ADDS improved from 2 to 1",
+   "description": "Oxygen weaned to 1 L/min, Q-ADDS improved from 1 to 0",
    "check": {
     "type": "all_of_groups",
     "groups": [

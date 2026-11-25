@@ -1,6 +1,6 @@
 # Q-ADDS scoring reference used for the synthetic notes
 
-Source (read directly): *Clinical Practice Procedures: Assessment / QAS Adult Deterioration Assessment*, Queensland Ambulance Service, policy code CPP_AS_QAD_0326, March 2026, chart page "Adult Q-ADDS v3.00 02/2026". This is the **QAS transfer-of-care version** of the chart for patients delayed offloading at a public hospital; the wards' own Q-ADDS charts are assumed to use the same adult scores but this has not been checked. The PDF is not stored in this repo (licence: CC BY-NC-ND, and it is the owner's upload).
+Source (read directly): *Clinical Practice Procedures: Assessment / QAS Adult Deterioration Assessment*, Queensland Ambulance Service, policy code CPP_AS_QAD_0326, March 2026, chart page "Adult Q-ADDS v3.00 02/2026". This is the **QAS transfer-of-care version** of the chart for patients delayed offloading at a public hospital; the owner confirms the hospital wards use the same adult scores (not independently checked by Claude). The PDF is not stored in this repo (licence: CC BY-NC-ND, and it is the owner's upload).
 
 | Parameter | Score 0 | Score 1 | Score 2 | Score 3 | Score 4 | E (emergency call) |
 |---|---|---|---|---|---|---|
@@ -18,4 +18,4 @@ Check log (scores in every drafted note were recomputed against this table on 25
 - N01, N02, N04, N05: all 0, correct.
 - N03: corrected to 0, 3, 7 (an earlier reviewer's table scored SpO2 92-94 as 1 and gave 4 and 8; the chart disagrees).
 - N06-N09, N10: correct (N10 matches the owner's own 0, 2, 4).
-- **N11 (owner's note): the chart gives 1 at 08:00 (2 L/min oxygen = 1; SpO2 94% = 0) and 0 at 12:00 (1 L/min = 0), but the note says 2 and 1.** Left unchanged, for the owner to decide.
+- N11 (owner's note): the chart gives 1 at 08:00 (2 L/min oxygen = 1; SpO2 94% = 0) and 0 at 12:00 (1 L/min = 0); the note said 2 and 1. Corrected at the owner's request to 1 and 0 (the vitals were kept).

@@ -104,6 +104,7 @@
     "type": "all_of_groups",
     "groups": [
      [
+      "supplemental",
       "sliding scale",
       "correction scale",
       "correction insulin",
