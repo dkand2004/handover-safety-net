@@ -1,0 +1,229 @@
+{
+ "note_id": "N05",
+ "failure_modes": [
+  10,
+  6
+ ],
+ "_comment": "Pilot note drafted by Claude for the owner's review. Wordings are initial proposals.",
+ "facts": [
+  {
+   "id": "N05-F1",
+   "category": "uncertainty",
+   "section": "S",
+   "severity": "critical",
+   "description": "NSTEMI is suspected, not confirmed",
+   "check": {
+    "type": "tag",
+    "target": [
+     "NSTEMI"
+    ],
+    "tag": "Suspected-Pending",
+    "forbid": [
+     "confirmed NSTEMI",
+     "NSTEMI confirmed",
+     "diagnosed with NSTEMI",
+     "has had an NSTEMI",
+     "has an NSTEMI",
+     "NSTEMI diagnosed"
+    ]
+   }
+  },
+  {
+   "id": "N05-F2",
+   "category": "uncertainty",
+   "section": "S",
+   "severity": "important",
+   "description": "Other diagnoses remain possible (unstable angina, musculoskeletal pain)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "unstable angina",
+      "differential",
+      "musculoskeletal",
+      "msk",
+      "other cause"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N05-F3",
+   "category": "pending",
+   "section": "R",
+   "severity": "critical",
+   "description": "Repeat hs-troponin (drawn 01:45) result is pending",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "troponin"
+     ],
+     [
+      "pending",
+      "awaited",
+      "awaiting",
+      "outstanding",
+      "not yet back",
+      "not back"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N05-F4",
+   "category": "pending",
+   "section": "R",
+   "severity": "important",
+   "description": "Cardiology Reg (Dr Okafor) will review once the repeat troponin is back",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "cardiology"
+     ],
+     [
+      "review",
+      "registrar",
+      "reg ",
+      "okafor"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N05-F5",
+   "category": "objective_value",
+   "section": "O",
+   "severity": "important",
+   "description": "First hs-troponin 28 ng/L (reference below 14)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "28 ng/l",
+      "28ng/l",
+      "28 ng/litre"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N05-F6",
+   "category": "objective_value",
+   "section": "O",
+   "severity": "important",
+   "description": "ECG: 1 mm ST depression V5-V6, no ST elevation",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "st depression",
+      "st-depression",
+      "st changes",
+      "st segment depression"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N05-F7",
+   "category": "medication",
+   "section": "B",
+   "severity": "critical",
+   "description": "Aspirin 300 mg given (stat)",
+   "check": {
+    "type": "dose",
+    "drug": [
+     "aspirin"
+    ],
+    "amount": 300,
+    "unit": "mg"
+   }
+  },
+  {
+   "id": "N05-F8",
+   "category": "last_given",
+   "section": "B",
+   "severity": "important",
+   "description": "Aspirin given at 23:15",
+   "check": {
+    "type": "exact",
+    "value": "23:15"
+   }
+  },
+  {
+   "id": "N05-F9",
+   "category": "medication",
+   "section": "B",
+   "severity": "important",
+   "description": "GTN 400 mcg SL given at 22:50",
+   "check": {
+    "type": "dose",
+    "drug": [
+     "gtn",
+     "glyceryl trinitrate"
+    ],
+    "amount": 400,
+    "unit": "mcg"
+   }
+  },
+  {
+   "id": "N05-F10",
+   "category": "allergy",
+   "section": "B",
+   "severity": "critical",
+   "description": "No known drug allergies (documented)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "nkda",
+      "no known drug allerg",
+      "no known allerg",
+      "nil known allerg"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N05-F11",
+   "category": "objective_value",
+   "section": "O",
+   "severity": "important",
+   "description": "Pain-free since 23:10 (0/10)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "pain-free",
+      "pain free",
+      "0/10",
+      "nil chest pain",
+      "no chest pain",
+      "no further chest pain",
+      "pain resolved"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N05-F12",
+   "category": "safety_flag",
+   "section": "R",
+   "severity": "important",
+   "description": "On telemetry / cardiac monitoring",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "telemetry",
+      "cardiac monitor",
+      "monitored",
+      "continuous monitoring"
+     ]
+    ]
+   }
+  }
+ ]
+}
