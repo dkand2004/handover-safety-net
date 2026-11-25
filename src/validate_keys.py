@@ -36,6 +36,12 @@ def validate(key: dict) -> list:
     facts = key.get("facts")
     if not (isinstance(facts, list) and facts):
         return errs + ["facts must be a non-empty list"]
+    ids = {f.get("id") for f in facts}
+    for d in key.get("derived", []):
+        did = d.get("id", "?")
+        if not (isinstance(d.get("if_phrases"), list) and d["if_phrases"]): errs.append(f"{did}: if_phrases must be a non-empty list")
+        if not (isinstance(d.get("then_kept"), list) and d["then_kept"] and set(d["then_kept"]) <= ids):
+            errs.append(f"{did}: then_kept must list existing fact ids")
     seen = set()
     for f in facts:
         fid = f.get("id", "?")

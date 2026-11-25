@@ -30,7 +30,7 @@
    "category": "arp",
    "section": "S",
    "severity": "critical",
-   "description": "Not for intubation / ICU (ward-based care)",
+   "description": "Not for intubation / ICU (ward-based treatment, including antibiotics and oxygen)",
    "check": {
     "type": "all_of_groups",
     "groups": [

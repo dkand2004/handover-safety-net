@@ -96,7 +96,19 @@ def invented_numbers(note: str, summary: str):
     return sorted(got - src)
 
 
+def check_derived(key: dict, statuses: dict, summary: str) -> dict:
+    """Conditional checks: IF a phrase appears THEN certain facts must also be kept (e.g. a subjective phrase may be
+    used only when the objective values it summarises are present). 'altered' = the phrase is standing alone."""
+    t, out = norm(summary), {}
+    for d in key.get("derived", []):
+        used = any_of(t, d["if_phrases"])
+        out[d["id"]] = "altered" if used and any(statuses[i] != "kept" for i in d["then_kept"]) else "kept"
+    return out
+
+
 def check_summary(key: dict, note: str, summary: str) -> dict:
-    return {"facts": {f["id"]: check_fact(f, summary) for f in key["facts"]},
+    facts = {f["id"]: check_fact(f, summary) for f in key["facts"]}
+    return {"facts": facts,
+            "derived": check_derived(key, facts, summary),
             "unsafe_notation": unsafe_notation(summary),
             "invented_numbers": invented_numbers(note, summary)}

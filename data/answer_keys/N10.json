@@ -145,7 +145,7 @@
    "category": "allergy",
    "section": "B",
    "severity": "critical",
-   "description": "Codeine reaction (severe nausea and vomiting)",
+   "description": "Codeine intolerance (severe nausea and vomiting)",
    "check": {
     "type": "all_of_groups",
     "groups": [
@@ -229,7 +229,7 @@
    "category": "vague_language",
    "section": "S",
    "severity": "critical",
-   "description": "The summary must not describe the patient as stable or much improved overall (PROPOSED check; subjective phrases are allowed when quoted)",
+   "description": "The summary must not describe the patient as stable or much improved overall (subjective phrases may be quoted)",
    "check": {
     "type": "none_of",
     "phrases": [
@@ -242,6 +242,26 @@
      "doing well"
     ]
    }
+  }
+ ],
+ "derived": [
+  {
+   "id": "N10-D1",
+   "description": "A subjective phrase ('feels better', 'rough night', ...) must not stand alone: the critical objective facts must also be kept",
+   "if_phrases": [
+    "feels better",
+    "feels a bit better",
+    "seems better",
+    "seems a bit better",
+    "doing ok",
+    "rough night",
+    "settled"
+   ],
+   "then_kept": [
+    "N10-F1",
+    "N10-F2",
+    "N10-F4"
+   ]
   }
  ]
 }

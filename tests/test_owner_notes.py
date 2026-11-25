@@ -45,7 +45,24 @@ def test_bad_summaries_lose_critical_facts():
     assert check_summary(load("N10")[0], load("N10")[1], BAD10)["facts"]["N10-F12"] == "altered"
 
 
+def test_vague_phrase_must_not_stand_alone():
+    key, note = load("N10")
+    assert check_summary(key, note, GOOD10)["derived"]["N10-D1"] == "kept"                      # phrase paired with objective facts
+    assert check_summary(key, note, BAD10)["derived"]["N10-D1"] == "altered"                    # phrase alone
+    only_pain = "Feels better, pain 7/10 now 4/10. Codeine intolerance (nausea and vomiting)."
+    assert check_summary(key, note, only_pain)["derived"]["N10-D1"] == "altered"                # some objective facts, not the critical ones
+    no_phrase = GOOD10.replace(", despite saying he feels better", "")
+    assert check_summary(key, note, no_phrase)["derived"]["N10-D1"] == "kept"                   # no subjective phrase, nothing to pair
+
+
+def test_owner_decisions_are_in_the_notes():
+    n10 = (ROOT / "data/synthetic_notes/N10.md").read_text(); n11 = (ROOT / "data/synthetic_notes/N11.md").read_text()
+    assert "22:00 (23/11)" in n10 and "intolerance" in n10
+    assert "[25/11/2026 12:30]" in n11 and "11:30" not in n11 and "symptom management only" not in n11
+    assert "Ward-based treatment, including antibiotics and oxygen" in n11
+
+
 if __name__ == "__main__":
-    for t in (test_good_summaries_keep_every_fact, test_bad_summaries_lose_critical_facts):
+    for t in (test_good_summaries_keep_every_fact, test_bad_summaries_lose_critical_facts, test_vague_phrase_must_not_stand_alone, test_owner_decisions_are_in_the_notes):
         try: t(); print("PASS", t.__name__)
         except AssertionError as e: print("FAIL", t.__name__, e); sys.exit(1)

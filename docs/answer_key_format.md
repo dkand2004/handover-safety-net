@@ -26,12 +26,15 @@ Mutation tests then found a flaw in the first v2 draft (a doubt marker from a *d
 
 Text is normalised before matching (case, spacing, "300mg" to "300 mg", "µg/ug" to mcg, "6:15" and "0615 hrs" to 06:15).
 
+## Derived (conditional) checks
+A key may contain a `derived` list: **IF** one of `if_phrases` appears in the summary, **THEN** the listed facts must also be kept. If not, the result is "altered". Example (N10): a subjective phrase such as "feels better" is allowed only when the critical objective values (Q-ADDS, heart rate and respiratory rate, temperature) are also kept, so a vague phrase never stands alone.
+
 ## Safeguards that do not depend on the fact list
 - **Invented numbers:** any dose-like number in the summary that is not in the source note is flagged.
 - **Unsafe notation:** "U" for units, trailing zeros ("5.0 mg") and missing leading zeros (".5 mg") are flagged.
 - **Mutation tests:** good summaries are deliberately corrupted (wrong dose, wrong unit, dropped drug, removed doubt) and the checker must catch each corruption.
 - **Validator:** `src/validate_keys.py` rejects malformed keys (tested against deliberately bad ones).
-Run everything with `python tests/test_check_facts.py` (12 tests).
+Run everything with `python tests/test_check_facts.py` (12 tests) and `python tests/test_owner_notes.py` (4 tests).
 
 ## Known limits and open decisions
 1. **Free-text matching stays approximate.** The most fragile checks are the doubt/certainty (`tag`) ones, because the sentence-level rule is a heuristic. **Decision for the owner:** have each approach return **structured output** (each item with a field `certainty`), so the check becomes a field comparison and not a text search. Recommended, because it removes the fragility and also makes "which section did it go in" measurable.
