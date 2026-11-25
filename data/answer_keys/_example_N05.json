@@ -1,19 +1,17 @@
 {
   "note_id": "N05",
   "failure_modes": [10, 6],
-  "_comment": "ILLUSTRATIVE example of the format only. The real N05 key is written together with the note.",
+  "_comment": "ILLUSTRATIVE example of format v2. The real N05 key is written together with the note.",
   "facts": [
-    {"id": "N05-F1", "category": "uncertainty", "section": "S",
+    {"id": "N05-F1", "category": "uncertainty", "section": "S", "severity": "critical",
      "description": "NSTEMI is suspected, not confirmed",
-     "check": {"type": "tag", "target": "NSTEMI", "tag": "Suspected-Pending"}},
-    {"id": "N05-F2", "category": "uncertainty", "section": "S",
-     "description": "The summary must not state NSTEMI as an established diagnosis",
-     "check": {"type": "none_of", "values": ["confirmed NSTEMI", "diagnosed with NSTEMI", "NSTEMI confirmed"]}},
-    {"id": "N05-F3", "category": "pending", "section": "R",
+     "check": {"type": "tag", "target": ["NSTEMI"], "tag": "Suspected-Pending",
+               "forbid": ["confirmed NSTEMI", "NSTEMI confirmed", "diagnosed with NSTEMI"]}},
+    {"id": "N05-F2", "category": "pending", "section": "R", "severity": "important",
      "description": "Repeat troponin is pending",
-     "check": {"type": "all_of", "values": ["troponin", "pending"]}},
-    {"id": "N05-F4", "category": "medication", "section": "B",
-     "description": "Aspirin 300 mg oral, exact dose and unit",
-     "check": {"type": "exact", "value": "300 mg"}}
+     "check": {"type": "all_of_groups", "groups": [["troponin"], ["pending", "awaited", "awaiting", "outstanding"]]}},
+    {"id": "N05-F3", "category": "medication", "section": "B", "severity": "critical",
+     "description": "Aspirin 300 mg, exact dose and unit",
+     "check": {"type": "dose", "drug": ["aspirin"], "amount": 300, "unit": "mg"}}
   ]
 }

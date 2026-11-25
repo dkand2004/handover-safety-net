@@ -12,13 +12,15 @@ SECTIONS = {"I", "S", "O", "B", "A", "R"}          # ISOBAR sections
 CATEGORIES = {"allergy", "medication", "last_given", "med_change", "deterioration", "pending", "arp",
               "laterality", "baseline", "uncertainty", "not_documented", "objective_value", "isolation", "device"}
 # Each check type and the fields it requires:
-#   exact       : "value" must appear verbatim (doses, units, times: no 'nearly right')
-#   all_of      : every string in "values" must appear (e.g. allergen AND severity)
-#   none_of     : none of "values" may appear (e.g. 'no known allergies' when allergies are not documented)
-#   tag         : the item named in "target" must carry the "tag" (Confirmed / Suspected-Pending / Unverified)
-#   latest_wins : "value" (the most recent) must appear and "stale_value" must not
-CHECKS = {"exact": {"value"}, "all_of": {"values"}, "none_of": {"values"}, "tag": {"target", "tag"},
-          "latest_wins": {"value", "stale_value"}}
+#   all_of_groups: "groups" = list of lists; every group needs at least one wording present (AND of ORs)
+#   none_of      : none of "phrases" may appear (e.g. 'no known allergies' when allergies are not documented)
+#   dose         : "drug" (names), "amount", "unit": number and unit are compared strictly (kept / altered / lost)
+#   tag          : "target" terms must carry the certainty "tag" (Confirmed / Suspected-Pending / Unverified)
+#   latest_wins  : "value" wordings (most recent) must appear and "stale" wordings must not
+#   exact        : "value" must appear (after normalisation): times, identifiers
+CHECKS = {"all_of_groups": {"groups"}, "none_of": {"phrases"}, "dose": {"drug", "amount", "unit"},
+          "tag": {"target", "tag"}, "latest_wins": {"value", "stale"}, "exact": {"value"}}
+SEVERITIES = {"critical", "important"}
 TAGS = {"Confirmed", "Suspected-Pending", "Unverified"}
 
 
@@ -47,8 +49,13 @@ def validate(key: dict) -> list:
         if t not in CHECKS: errs.append(f"{fid}: unknown check type {t!r}"); continue
         missing = CHECKS[t] - set(chk)
         if missing: errs.append(f"{fid}: check '{t}' missing {sorted(missing)}")
-        if t in ("all_of", "none_of") and not (isinstance(chk.get("values"), list) and chk["values"]):
-            errs.append(f"{fid}: 'values' must be a non-empty list")
+        if f.get("severity") not in SEVERITIES: errs.append(f"{fid}: severity must be 'critical' or 'important'")
+        if t == "all_of_groups" and not (isinstance(chk.get("groups"), list) and chk["groups"] and all(isinstance(g, list) and g for g in chk["groups"])):
+            errs.append(f"{fid}: 'groups' must be a non-empty list of non-empty lists")
+        if t == "none_of" and not (isinstance(chk.get("phrases"), list) and chk["phrases"]):
+            errs.append(f"{fid}: 'phrases' must be a non-empty list")
+        if t == "dose" and not isinstance(chk.get("amount"), (int, float)):
+            errs.append(f"{fid}: dose 'amount' must be a number")
         if t == "tag" and chk.get("tag") not in TAGS: errs.append(f"{fid}: tag must be one of {sorted(TAGS)}")
     return errs
 
