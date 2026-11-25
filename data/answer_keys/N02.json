@@ -1,0 +1,204 @@
+{
+ "note_id": "N02",
+ "_comment": "Drafted by Claude for the owner's review. Wordings and severities are proposals.",
+ "failure_modes": [
+  8,
+  4,
+  3
+ ],
+ "facts": [
+  {
+   "id": "N02-F1",
+   "category": "laterality",
+   "section": "S",
+   "severity": "critical",
+   "description": "Surgery is on the RIGHT eye",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "right eye",
+      "r eye",
+      "right cataract",
+      "right-eye",
+      "right phaco"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N02-F2",
+   "category": "laterality",
+   "section": "S",
+   "severity": "critical",
+   "description": "The summary must not say the left eye was operated today",
+   "check": {
+    "type": "none_of",
+    "phrases": [
+     "left eye cataract extraction",
+     "operated on the left",
+     "surgery on the left eye",
+     "left eye was operated",
+     "left cataract surgery today",
+     "left eye surgery today"
+    ]
+   }
+  },
+  {
+   "id": "N02-F3",
+   "category": "med_change",
+   "section": "A",
+   "severity": "critical",
+   "description": "Apixaban is WITHHELD",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "apixaban",
+      "eliquis"
+     ],
+     [
+      "withheld",
+      "held",
+      "not given",
+      "omitted",
+      "ceased",
+      "withhold",
+      "on hold"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N02-F4",
+   "category": "last_given",
+   "section": "A",
+   "severity": "critical",
+   "description": "Last apixaban dose 23/11 at 20:00",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "apixaban",
+      "eliquis"
+     ],
+     [
+      "20:00",
+      "8pm",
+      "2000"
+     ],
+     [
+      "23/11",
+      "23rd"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N02-F5",
+   "category": "medication",
+   "section": "A",
+   "severity": "important",
+   "description": "Amlodipine 5 mg given this morning",
+   "check": {
+    "type": "dose",
+    "drug": [
+     "amlodipine"
+    ],
+    "amount": 5,
+    "unit": "mg"
+   }
+  },
+  {
+   "id": "N02-F6",
+   "category": "last_given",
+   "section": "A",
+   "severity": "important",
+   "description": "Amlodipine given at 07:00",
+   "check": {
+    "type": "exact",
+    "value": "07:00"
+   }
+  },
+  {
+   "id": "N02-F7",
+   "category": "med_change",
+   "section": "R",
+   "severity": "critical",
+   "description": "Surgeon plans to recommence apixaban 26/11 08:00 if no bleeding",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "apixaban",
+      "eliquis"
+     ],
+     [
+      "recommence",
+      "restart",
+      "resume"
+     ],
+     [
+      "26/11",
+      "tomorrow"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N02-F8",
+   "category": "allergy",
+   "section": "B",
+   "severity": "critical",
+   "description": "No known drug allergies (documented)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "nkda",
+      "no known drug allerg",
+      "no known allerg",
+      "nil known allerg"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N02-F9",
+   "category": "safety_flag",
+   "section": "A",
+   "severity": "important",
+   "description": "RIGHT eye pad and shield on until review 26/11",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "shield",
+      "pad"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N02-F10",
+   "category": "pending",
+   "section": "R",
+   "severity": "important",
+   "description": "Discharge 14:00 with an adult escort",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "escort",
+      "accompanied",
+      "carer"
+     ],
+     [
+      "14:00",
+      "2pm"
+     ]
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,224 @@
+{
+ "note_id": "N04",
+ "_comment": "Drafted by Claude for the owner's review. Wordings and severities are proposals.",
+ "failure_modes": [
+  11,
+  1
+ ],
+ "facts": [
+  {
+   "id": "N04-F1",
+   "category": "not_documented",
+   "section": "B",
+   "severity": "critical",
+   "description": "The summary must not say there are no known allergies",
+   "check": {
+    "type": "none_of",
+    "phrases": [
+     "nkda",
+     "no known drug allerg",
+     "no known allerg",
+     "nil known allerg",
+     "no allergies",
+     "nil allergies",
+     "no allergy",
+     "allergy free",
+     "no drug allerg"
+    ]
+   }
+  },
+  {
+   "id": "N04-F2",
+   "category": "not_documented",
+   "section": "B",
+   "severity": "critical",
+   "description": "Allergy status is NOT DOCUMENTED / unknown",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "allerg"
+     ],
+     [
+      "not documented",
+      "not recorded",
+      "unknown",
+      "not known",
+      "unclear",
+      "not stated",
+      "not available",
+      "unable to confirm",
+      "to be confirmed",
+      "unverified",
+      "blank",
+      "not yet obtained",
+      "to be obtained",
+      "undocumented"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N04-F3",
+   "category": "safety_flag",
+   "section": "S",
+   "severity": "important",
+   "description": "Acute kidney injury with dehydration",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "aki",
+      "acute kidney injury",
+      "kidney injury"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N04-F4",
+   "category": "medication",
+   "section": "A",
+   "severity": "critical",
+   "description": "Ramipril and metformin are HELD",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "ramipril"
+     ],
+     [
+      "metformin"
+     ],
+     [
+      "held",
+      "hold",
+      "withheld",
+      "withhold",
+      "ceased",
+      "omit",
+      "not to be given"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N04-F5",
+   "category": "medication",
+   "section": "A",
+   "severity": "important",
+   "description": "Hartmann's 1 L IV over 4 hours from 15:00",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "hartmann"
+     ],
+     [
+      "1 l",
+      "1l",
+      "1000"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N04-F6",
+   "category": "medication",
+   "section": "A",
+   "severity": "important",
+   "description": "Ondansetron 4 mg IV",
+   "check": {
+    "type": "dose",
+    "drug": [
+     "ondansetron"
+    ],
+    "amount": 4,
+    "unit": "mg"
+   }
+  },
+  {
+   "id": "N04-F7",
+   "category": "pending",
+   "section": "R",
+   "severity": "important",
+   "description": "Repeat UEC due 20:00 (pending)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "uec",
+      "u&e",
+      "urea",
+      "renal function",
+      "electrolytes",
+      "kidney function"
+     ],
+     [
+      "pending",
+      "due",
+      "repeat",
+      "awaiting",
+      "20:00"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N04-F8",
+   "category": "safety_flag",
+   "section": "R",
+   "severity": "important",
+   "description": "Strict fluid balance chart",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "fluid balance",
+      "fbc chart",
+      "strict input",
+      "intake and output",
+      "i/o"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N04-F9",
+   "category": "baseline",
+   "section": "B",
+   "severity": "important",
+   "description": "History is limited; lives alone per ambulance; medication list unverified",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "limited",
+      "unverified",
+      "unable",
+      "poor historian",
+      "not contactable",
+      "incomplete",
+      "unclear"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N04-F10",
+   "category": "safety_flag",
+   "section": "S",
+   "severity": "important",
+   "description": "Full resuscitation",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "full resus",
+      "for cpr"
+     ]
+    ]
+   }
+  }
+ ]
+}

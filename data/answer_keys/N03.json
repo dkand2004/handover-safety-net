@@ -1,0 +1,240 @@
+{
+ "note_id": "N03",
+ "_comment": "Drafted by Claude for the owner's review. Wordings and severities are proposals.",
+ "failure_modes": [
+  1,
+  5
+ ],
+ "facts": [
+  {
+   "id": "N03-F1",
+   "category": "allergy",
+   "section": "B",
+   "severity": "critical",
+   "description": "Allergen: penicillin",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "penicillin"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N03-F2",
+   "category": "allergy",
+   "section": "B",
+   "severity": "critical",
+   "description": "Severity: anaphylaxis",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "anaphylaxis",
+      "anaphylactic"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N03-F3",
+   "category": "allergy",
+   "section": "B",
+   "severity": "critical",
+   "description": "The reaction must not be described as mild or an intolerance",
+   "check": {
+    "type": "none_of",
+    "phrases": [
+     "mild allergy",
+     "mild reaction",
+     "minor reaction",
+     "penicillin intolerance",
+     "sensitivity to penicillin"
+    ]
+   }
+  },
+  {
+   "id": "N03-F4",
+   "category": "objective_value",
+   "section": "O",
+   "severity": "critical",
+   "description": "Latest SpO2 91% on room air",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "91%",
+      "91 %",
+      "spo2 91",
+      "sats 91",
+      "sat 91"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N03-F5",
+   "category": "objective_value",
+   "section": "O",
+   "severity": "critical",
+   "description": "Latest temperature 38.9",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "38.9"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N03-F6",
+   "category": "objective_value",
+   "section": "O",
+   "severity": "critical",
+   "description": "Latest respiratory rate 28",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "rr 28",
+      "rr: 28",
+      "28 breaths",
+      "resp rate 28",
+      "rr of 28",
+      "28/min",
+      "28 bpm"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N03-F7",
+   "category": "deterioration",
+   "section": "A",
+   "severity": "critical",
+   "description": "Observations are worsening over the shift",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "worsen",
+      "deteriorat",
+      "rising",
+      "increasing",
+      "trending up",
+      "declin",
+      "downward",
+      "escalat"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N03-F8",
+   "category": "objective_value",
+   "section": "O",
+   "severity": "important",
+   "description": "Oxygen 2 L/min via nasal prongs started 12:30",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "oxygen",
+      "o2"
+     ],
+     [
+      "2 l",
+      "2l",
+      "2 litres",
+      "2 lpm"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N03-F9",
+   "category": "medication",
+   "section": "A",
+   "severity": "important",
+   "description": "Azithromycin 500 mg IV daily",
+   "check": {
+    "type": "dose",
+    "drug": [
+     "azithromycin"
+    ],
+    "amount": 500,
+    "unit": "mg"
+   }
+  },
+  {
+   "id": "N03-F10",
+   "category": "last_given",
+   "section": "A",
+   "severity": "important",
+   "description": "Azithromycin last given 09:30 on 24/11",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "azithromycin"
+     ],
+     [
+      "09:30",
+      "0930"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N03-F11",
+   "category": "pending",
+   "section": "R",
+   "severity": "important",
+   "description": "Medical RMO review awaited (informed 14:10)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "rmo",
+      "medical team",
+      "medical review",
+      "registrar",
+      "doctor"
+     ],
+     [
+      "awaited",
+      "awaiting",
+      "pending",
+      "informed",
+      "notified",
+      "paged"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N03-F12",
+   "category": "pending",
+   "section": "R",
+   "severity": "important",
+   "description": "Blood and sputum cultures pending",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "culture"
+     ],
+     [
+      "pending",
+      "awaiting",
+      "awaited",
+      "outstanding",
+      "sent"
+     ]
+    ]
+   }
+  }
+ ]
+}

@@ -1,0 +1,237 @@
+{
+ "note_id": "N01",
+ "_comment": "Drafted by Claude for the owner's review. Wordings and severities are proposals.",
+ "failure_modes": [
+  8,
+  9,
+  3
+ ],
+ "facts": [
+  {
+   "id": "N01-F1",
+   "category": "laterality",
+   "section": "S",
+   "severity": "critical",
+   "description": "Fracture and operation are on the LEFT hip",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "left hip",
+      "l hip",
+      "left neck of femur",
+      "left nof",
+      "left hemiarthroplasty",
+      "left fractured",
+      "left fnof",
+      "left sided hip"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N01-F2",
+   "category": "laterality",
+   "section": "S",
+   "severity": "critical",
+   "description": "The summary must not place the hip on the right",
+   "check": {
+    "type": "none_of",
+    "phrases": [
+     "right hip",
+     "r hip",
+     "right neck of femur",
+     "right hemiarthroplasty",
+     "right-sided hip"
+    ]
+   }
+  },
+  {
+   "id": "N01-F3",
+   "category": "medication",
+   "section": "A",
+   "severity": "critical",
+   "description": "Enoxaparin 40 mg SC daily",
+   "check": {
+    "type": "dose",
+    "drug": [
+     "enoxaparin",
+     "clexane"
+    ],
+    "amount": 40,
+    "unit": "mg"
+   }
+  },
+  {
+   "id": "N01-F4",
+   "category": "last_given",
+   "section": "A",
+   "severity": "critical",
+   "description": "Enoxaparin last given at 06:00 (next due 06:00 on 26/11)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "enoxaparin",
+      "clexane"
+     ],
+     [
+      "06:00",
+      "0600",
+      "6am"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N01-F5",
+   "category": "safety_flag",
+   "section": "B",
+   "severity": "critical",
+   "description": "High falls risk",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "falls"
+     ],
+     [
+      "high"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N01-F6",
+   "category": "baseline",
+   "section": "B",
+   "severity": "important",
+   "description": "Mild dementia, intermittent confusion",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "dementia",
+      "cognitive impairment",
+      "baseline confusion",
+      "confused",
+      "disorientat"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N01-F7",
+   "category": "allergy",
+   "section": "B",
+   "severity": "critical",
+   "description": "No known drug allergies (documented)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "nkda",
+      "no known drug allerg",
+      "no known allerg",
+      "nil known allerg"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N01-F8",
+   "category": "baseline",
+   "section": "A",
+   "severity": "important",
+   "description": "Weightbearing as tolerated on the left leg",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "wbat",
+      "weight bearing as tolerated",
+      "weightbearing as tolerated",
+      "weight-bearing as tolerated"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N01-F9",
+   "category": "baseline",
+   "section": "A",
+   "severity": "important",
+   "description": "Needs 2 staff assist to mobilise/reposition",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "2 staff",
+      "two staff",
+      "2-person",
+      "two person",
+      "2 person",
+      "2x assist",
+      "2 assist",
+      "two-person"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N01-F10",
+   "category": "medication",
+   "section": "A",
+   "severity": "important",
+   "description": "Oxycodone IR 2.5 mg PO PRN",
+   "check": {
+    "type": "dose",
+    "drug": [
+     "oxycodone"
+    ],
+    "amount": 2.5,
+    "unit": "mg"
+   }
+  },
+  {
+   "id": "N01-F11",
+   "category": "pending",
+   "section": "R",
+   "severity": "important",
+   "description": "Orthogeriatric review pending",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "orthogeriatric",
+      "ortho-geri",
+      "orthogeri"
+     ],
+     [
+      "pending",
+      "awaiting",
+      "awaited",
+      "not yet",
+      "outstanding"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N01-F12",
+   "category": "safety_flag",
+   "section": "R",
+   "severity": "important",
+   "description": "Full resuscitation",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "full resus",
+      "for cpr"
+     ]
+    ]
+   }
+  }
+ ]
+}
