@@ -95,7 +95,7 @@
    "id": "N05-F5",
    "category": "objective_value",
    "section": "O",
-   "severity": "important",
+   "severity": "critical",
    "description": "First hs-troponin 28 ng/L (reference below 14)",
    "check": {
     "type": "all_of_groups",
@@ -112,7 +112,7 @@
    "id": "N05-F6",
    "category": "objective_value",
    "section": "O",
-   "severity": "important",
+   "severity": "critical",
    "description": "ECG: 1 mm ST depression V5-V6, no ST elevation",
    "check": {
     "type": "all_of_groups",
@@ -129,7 +129,7 @@
   {
    "id": "N05-F7",
    "category": "medication",
-   "section": "B",
+   "section": "A",
    "severity": "critical",
    "description": "Aspirin 300 mg given (stat)",
    "check": {
@@ -144,7 +144,7 @@
   {
    "id": "N05-F8",
    "category": "last_given",
-   "section": "B",
+   "section": "A",
    "severity": "important",
    "description": "Aspirin given at 23:15",
    "check": {
@@ -155,7 +155,7 @@
   {
    "id": "N05-F9",
    "category": "medication",
-   "section": "B",
+   "section": "A",
    "severity": "important",
    "description": "GTN 400 mcg SL given at 22:50",
    "check": {
