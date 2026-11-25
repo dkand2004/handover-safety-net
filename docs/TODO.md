@@ -7,8 +7,8 @@
 - Synthetic notes only; no real hospital names; do not show `.env` or the API key.
 
 ## Project 2 build plan
-- [ ] Review `docs/scenario_plan.md` (15 notes; owner writes N10, N11, N13, N15 in her own wording)
-- [ ] Agree the answer-key format
-- [ ] Pilot: 3 notes with answer keys
+- [x] `docs/scenario_plan.md` approved: 18 notes (second notes N16 to N18 added); owner writes N10 and N11
+- [ ] Owner to approve the answer-key format (`docs/answer_key_format.md`, validated by `src/validate_keys.py`)
+- [ ] Pilot: N05, N10 and N11 with answer keys
 - [ ] Remaining notes and keys
 - [ ] Rule-based baseline, Claude arm, hybrid arm, scoring, tests, results
