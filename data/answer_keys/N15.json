@@ -133,7 +133,7 @@
    "id": "N15-F7",
    "category": "objective_value",
    "section": "O",
-   "severity": "important",
+   "severity": "critical",
    "description": "K 3.4 (bloods 11:00)",
    "check": {
     "type": "all_of_groups",
@@ -268,6 +268,21 @@
       "nil known allerg"
      ]
     ]
+   }
+  },
+  {
+   "id": "N15-F14",
+   "category": "medication",
+   "section": "A",
+   "severity": "important",
+   "description": "Digoxin 62.5 mcg PO daily (relevant with K 3.4)",
+   "check": {
+    "type": "dose",
+    "drug": [
+     "digoxin"
+    ],
+    "amount": 62.5,
+    "unit": "mcg"
    }
   }
  ]

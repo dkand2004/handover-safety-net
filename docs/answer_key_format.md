@@ -17,7 +17,7 @@ Mutation tests then found a flaw in the first v2 draft (a doubt marker from a *d
 ## Check types
 | Type | Kept when | Altered when | Lost when |
 |---|---|---|---|
-| `all_of_groups` (groups of acceptable wordings, AND of ORs) | every group has a wording present | n/a | a group is missing |
+| `all_of_groups` (groups of acceptable wordings, AND of ORs; optional `"same_sentence": true`) | every group has a wording present (with `same_sentence`: inside one sentence) | n/a | a group is missing |
 | `dose` (drug, amount, unit) | the number and unit next to the drug match exactly | a different number or unit is next to the drug (also if two conflicting doses appear) | the drug or its dose is absent |
 | `tag` (target terms, tag, forbid) | the target appears with a doubt/certainty marker **in the same sentence** | a "forbid" phrase appears, or the target appears without the marker | the target is absent |
 | `none_of` (phrases) | none appear | one appears (for example "no known allergies" when allergies are not documented) | n/a |

@@ -26,7 +26,7 @@
    "id": "N14-F2",
    "category": "pending",
    "section": "R",
-   "severity": "critical",
+   "severity": "important",
    "description": "IDC removal is planned for 27/11 at 06:00",
    "check": {
     "type": "all_of_groups",
@@ -74,7 +74,7 @@
    "id": "N14-F4",
    "category": "device",
    "section": "A",
-   "severity": "critical",
+   "severity": "important",
    "description": "Wound drain (Redivac) is in situ and stays",
    "check": {
     "type": "all_of_groups",

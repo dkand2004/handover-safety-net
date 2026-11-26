@@ -28,7 +28,8 @@
       "ceased",
       "on hold"
      ]
-    ]
+    ],
+    "same_sentence": true
    }
   },
   {
@@ -73,7 +74,8 @@
       "not back",
       "result awaited"
      ]
-    ]
+    ],
+    "same_sentence": true
    }
   },
   {

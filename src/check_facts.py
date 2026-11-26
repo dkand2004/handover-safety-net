@@ -68,10 +68,20 @@ def check_tag(t, c):
     return "altered" if found else "lost"
 
 
+def sentences(t: str):
+    """Split on full stops, semicolons and newlines, but not on the decimal point in numbers like 38.6 or 1.5."""
+    return [x for x in re.split(r"(?<!\d)\.|\.(?!\d)|[;\n]", t) if x.strip()]
+
+
 def check_fact(fact: dict, summary: str) -> str:
     t, c = norm(summary), fact["check"]
     k = c["type"]
-    if k == "all_of_groups": return "kept" if all(any_of(t, g) for g in c["groups"]) else "lost"
+    if k == "all_of_groups":
+        # optional "same_sentence": every group must be satisfied inside ONE sentence, so a generic word such as
+        # "awaiting" in an unrelated sentence cannot vouch for the item (stricter; a miss goes to human review)
+        if c.get("same_sentence"):
+            return "kept" if any(all(any_of(x, g) for g in c["groups"]) for x in sentences(t)) else "lost"
+        return "kept" if all(any_of(t, g) for g in c["groups"]) else "lost"
     if k == "none_of":       return "altered" if any_of(t, c["phrases"]) else "kept"
     if k == "dose":          return check_dose(t, c)
     if k == "tag":           return check_tag(t, c)

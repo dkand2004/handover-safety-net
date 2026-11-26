@@ -22,7 +22,7 @@ GOOD = {
  "N14": ("DIMITROV, Katarina, 68F, Day 3 post total abdominal hysterectomy. NKDA. Full resuscitation. Urinary catheter (IDC) in situ, urine 1450 mL over 24 h; IDC removal planned 27/11 at 06:00, "
          "then trial of void with a bladder scan if no void in 6 hours. Redivac drain in situ, 30 mL serous over 24 h; surgical team to review the drain tomorrow."),
  "N15": ("MCKENZIE, Ray, 77M, decompensated heart failure, AF. NKDA. Full resuscitation. Breathlessness WORSE this afternoon: Q-ADDS 1 at 08:00, now 6 at 14:00 (RR 26, SpO2 91% RA, HR 112, BP 100/60). "
-         "O2 2 L/min NP started 15:00. Furosemide 40 mg IV BD, last given 14:00. K 3.4, repeat UEC at 06:00 tomorrow. Fluid restriction 1.5 L. Weight 82 kg (85.5 kg on admission). RMO Dr Lee informed, review awaited."),
+         "O2 2 L/min NP started 15:00. Furosemide 40 mg IV BD, last given 14:00. Digoxin 62.5 mcg PO daily. K 3.4, repeat UEC at 06:00 tomorrow. Fluid restriction 1.5 L. Weight 82 kg (85.5 kg on admission). RMO Dr Lee informed, review awaited."),
 }
 BAD = {
  "N12": "69M awaiting colonoscopy tomorrow. On warfarin. INR fine. NKDA.",

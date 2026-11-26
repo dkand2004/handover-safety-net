@@ -233,7 +233,8 @@
       "outstanding",
       "sent"
      ]
-    ]
+    ],
+    "same_sentence": true
    }
   }
  ]
