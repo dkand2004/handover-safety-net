@@ -1,0 +1,229 @@
+{
+ "note_id": "N12",
+ "_comment": "Drafted by Claude for the owner's review. Wordings and severities are proposals.",
+ "failure_modes": [
+  4,
+  6
+ ],
+ "facts": [
+  {
+   "id": "N12-F1",
+   "category": "med_change",
+   "section": "A",
+   "severity": "critical",
+   "description": "Warfarin is HELD (do not give tonight)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "warfarin"
+     ],
+     [
+      "held",
+      "withheld",
+      "hold",
+      "not given",
+      "omitted",
+      "do not give",
+      "ceased",
+      "on hold"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N12-F2",
+   "category": "last_given",
+   "section": "A",
+   "severity": "critical",
+   "description": "Last warfarin dose was on 21/11 (evening)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "warfarin"
+     ],
+     [
+      "21/11",
+      "21st"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N12-F3",
+   "category": "pending",
+   "section": "R",
+   "severity": "critical",
+   "description": "Repeat INR (drawn 06:15) result is PENDING",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "inr"
+     ],
+     [
+      "pending",
+      "awaited",
+      "awaiting result",
+      "awaiting inr",
+      "awaiting the inr",
+      "outstanding",
+      "not yet back",
+      "not back",
+      "result awaited"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N12-F4",
+   "category": "objective_value",
+   "section": "O",
+   "severity": "important",
+   "description": "Procedure target INR below 1.5",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "inr"
+     ],
+     [
+      "1.5"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N12-F5",
+   "category": "pending",
+   "section": "R",
+   "severity": "important",
+   "description": "Colonoscopy with polypectomy planned 27/11 at 08:00",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "colonoscopy",
+      "polypectomy"
+     ],
+     [
+      "27/11",
+      "tomorrow",
+      "08:00",
+      "0800"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N12-F6",
+   "category": "med_change",
+   "section": "R",
+   "severity": "important",
+   "description": "Proceduralist to advise when to restart warfarin after the procedure",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "warfarin"
+     ],
+     [
+      "restart",
+      "recommence",
+      "resume"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N12-F7",
+   "category": "baseline",
+   "section": "B",
+   "severity": "important",
+   "description": "Atrial fibrillation on warfarin",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "atrial fibrillation",
+      "af ",
+      " af,",
+      " af.",
+      " af)"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N12-F8",
+   "category": "safety_flag",
+   "section": "R",
+   "severity": "important",
+   "description": "NBM from midnight",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "nbm",
+      "nil by mouth",
+      "fasting",
+      "nil orally"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N12-F9",
+   "category": "allergy",
+   "section": "B",
+   "severity": "critical",
+   "description": "No known drug allergies (documented)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "nkda",
+      "no known drug allerg",
+      "no known allerg",
+      "nil known allerg"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N12-F10",
+   "category": "safety_flag",
+   "section": "R",
+   "severity": "important",
+   "description": "Full resuscitation",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "full resus",
+      "for cpr"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N12-F11",
+   "category": "med_change",
+   "section": "A",
+   "severity": "critical",
+   "description": "The summary must not say warfarin is continued or given tonight",
+   "check": {
+    "type": "none_of",
+    "phrases": [
+     "warfarin continued",
+     "continue warfarin",
+     "warfarin to continue",
+     "warfarin as usual",
+     "warfarin given tonight",
+     "warfarin is continued"
+    ]
+   }
+  }
+ ]
+}

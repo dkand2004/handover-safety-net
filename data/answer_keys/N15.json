@@ -1,0 +1,274 @@
+{
+ "note_id": "N15",
+ "_comment": "Drafted by Claude for the owner's review. Wordings and severities are proposals.",
+ "failure_modes": [
+  2,
+  5,
+  12
+ ],
+ "facts": [
+  {
+   "id": "N15-F1",
+   "category": "medication",
+   "section": "A",
+   "severity": "critical",
+   "description": "Furosemide (Lasix) 40 mg IV",
+   "check": {
+    "type": "dose",
+    "drug": [
+     "furosemide",
+     "frusemide",
+     "lasix"
+    ],
+    "amount": 40,
+    "unit": "mg"
+   }
+  },
+  {
+   "id": "N15-F2",
+   "category": "last_given",
+   "section": "A",
+   "severity": "critical",
+   "description": "Furosemide last given 14:00",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "furosemide",
+      "frusemide",
+      "lasix"
+     ],
+     [
+      "14:00",
+      "1400",
+      "2pm"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N15-F3",
+   "category": "objective_value",
+   "section": "O",
+   "severity": "critical",
+   "description": "Latest SpO2 91% on room air",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "91%",
+      "91 %",
+      "spo2 91",
+      "sats 91",
+      "sat 91"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N15-F4",
+   "category": "deterioration",
+   "section": "A",
+   "severity": "critical",
+   "description": "Latest Q-ADDS is 6",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "q-adds 6",
+      "qadds 6",
+      "q adds 6",
+      "score of 6",
+      "score 6",
+      "q-adds: 6",
+      "now 6",
+      "to 6",
+      "up to 6"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N15-F5",
+   "category": "deterioration",
+   "section": "A",
+   "severity": "critical",
+   "description": "Breathlessness is WORSE this afternoon (Q-ADDS 1 -> 6)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "worse",
+      "worsen",
+      "deteriorat",
+      "increas",
+      "rising",
+      "escalat"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N15-F6",
+   "category": "vague_language",
+   "section": "S",
+   "severity": "critical",
+   "description": "The summary must not describe the patient as better or improved overall (subjective quotes are not objective)",
+   "check": {
+    "type": "none_of",
+    "phrases": [
+     "much better",
+     "feels better",
+     "is better",
+     "improved overall",
+     "doing well",
+     "clinically stable",
+     "is stable",
+     "remains stable",
+     "a bit better"
+    ]
+   }
+  },
+  {
+   "id": "N15-F7",
+   "category": "objective_value",
+   "section": "O",
+   "severity": "important",
+   "description": "K 3.4 (bloods 11:00)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "3.4"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N15-F8",
+   "category": "pending",
+   "section": "R",
+   "severity": "important",
+   "description": "Repeat UEC 06:00 tomorrow",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "uec",
+      "u&e",
+      "urea",
+      "electrolytes",
+      "potassium",
+      "k+"
+     ],
+     [
+      "06:00",
+      "0600",
+      "tomorrow",
+      "tmrw",
+      "repeat"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N15-F9",
+   "category": "pending",
+   "section": "R",
+   "severity": "important",
+   "description": "RMO (Dr Lee) review awaited",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "rmo",
+      "dr lee",
+      "medical review",
+      "registrar"
+     ],
+     [
+      "awaited",
+      "awaiting",
+      "pending",
+      "informed",
+      "aware",
+      "review"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N15-F10",
+   "category": "objective_value",
+   "section": "O",
+   "severity": "important",
+   "description": "O2 2 L/min via nasal prongs started 15:00",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "o2",
+      "oxygen"
+     ],
+     [
+      "2 l",
+      "2l",
+      "2 litres"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N15-F11",
+   "category": "safety_flag",
+   "section": "R",
+   "severity": "important",
+   "description": "Fluid restriction 1.5 L (1500 mL) per 24 h",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "1.5 l",
+      "1.5l",
+      "1500",
+      "1.5 litre"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N15-F12",
+   "category": "objective_value",
+   "section": "O",
+   "severity": "important",
+   "description": "Weight 82 kg (admission 85.5 kg)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "82 kg",
+      "82kg"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N15-F13",
+   "category": "allergy",
+   "section": "B",
+   "severity": "critical",
+   "description": "No known drug allergies (documented)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "nkda",
+      "no known drug allerg",
+      "no known allerg",
+      "nil known allerg"
+     ]
+    ]
+   }
+  }
+ ]
+}

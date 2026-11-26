@@ -1,0 +1,195 @@
+{
+ "note_id": "N14",
+ "_comment": "Drafted by Claude for the owner's review. Wordings and severities are proposals.",
+ "failure_modes": [
+  6
+ ],
+ "facts": [
+  {
+   "id": "N14-F1",
+   "category": "device",
+   "section": "A",
+   "severity": "critical",
+   "description": "Urinary catheter (IDC) is in situ",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "idc",
+      "urinary catheter",
+      "catheter"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N14-F2",
+   "category": "pending",
+   "section": "R",
+   "severity": "critical",
+   "description": "IDC removal is planned for 27/11 at 06:00",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "idc",
+      "catheter"
+     ],
+     [
+      "remov",
+      "out",
+      "take out"
+     ],
+     [
+      "27/11",
+      "tomorrow",
+      "06:00",
+      "0600"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N14-F3",
+   "category": "pending",
+   "section": "R",
+   "severity": "important",
+   "description": "After removal: trial of void, bladder scan if no void in 6 hours",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "trial of void",
+      "tov",
+      "void"
+     ],
+     [
+      "bladder scan",
+      "scan"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N14-F4",
+   "category": "device",
+   "section": "A",
+   "severity": "critical",
+   "description": "Wound drain (Redivac) is in situ and stays",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "drain",
+      "redivac"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N14-F5",
+   "category": "objective_value",
+   "section": "O",
+   "severity": "important",
+   "description": "Drain output 30 mL serous over the last 24 h",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "30 ml",
+      "30ml"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N14-F6",
+   "category": "objective_value",
+   "section": "O",
+   "severity": "important",
+   "description": "Urine output 1450 mL over the last 24 h",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "1450",
+      "1.45 l",
+      "1,450"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N14-F7",
+   "category": "pending",
+   "section": "R",
+   "severity": "important",
+   "description": "Surgical team to review the drain tomorrow (removal not yet planned)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "drain",
+      "redivac"
+     ],
+     [
+      "review",
+      "not yet",
+      "tomorrow",
+      "27/11"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N14-F8",
+   "category": "safety_flag",
+   "section": "S",
+   "severity": "important",
+   "description": "Day 3 post total abdominal hysterectomy",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "hysterectomy",
+      "tah"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N14-F9",
+   "category": "allergy",
+   "section": "B",
+   "severity": "critical",
+   "description": "No known drug allergies (documented)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "nkda",
+      "no known drug allerg",
+      "no known allerg",
+      "nil known allerg"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N14-F10",
+   "category": "safety_flag",
+   "section": "R",
+   "severity": "important",
+   "description": "Full resuscitation",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "full resus",
+      "for cpr"
+     ]
+    ]
+   }
+  }
+ ]
+}

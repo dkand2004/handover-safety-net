@@ -1,0 +1,203 @@
+{
+ "note_id": "N13",
+ "_comment": "Drafted by Claude for the owner's review. Wordings and severities are proposals.",
+ "failure_modes": [
+  9
+ ],
+ "facts": [
+  {
+   "id": "N13-F1",
+   "category": "isolation",
+   "section": "S",
+   "severity": "critical",
+   "description": "MRSA contact precautions are in place",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "mrsa"
+     ],
+     [
+      "contact precaution",
+      "isolation",
+      "contact",
+      "gown"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N13-F2",
+   "category": "isolation",
+   "section": "A",
+   "severity": "important",
+   "description": "Single room, gown and gloves for all direct contact",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "single room",
+      "side room",
+      "room 12"
+     ],
+     [
+      "gown",
+      "glove",
+      "ppe"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N13-F3",
+   "category": "safety_flag",
+   "section": "B",
+   "severity": "critical",
+   "description": "High falls risk (bed alarm on)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "falls"
+     ],
+     [
+      "high"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N13-F4",
+   "category": "baseline",
+   "section": "B",
+   "severity": "critical",
+   "description": "Mobilises with 4WW and 1 assist",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "4ww",
+      "walking frame",
+      "frame"
+     ],
+     [
+      "1 assist",
+      "one assist",
+      "1x assist",
+      "1 person",
+      "assist"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N13-F5",
+   "category": "allergy",
+   "section": "B",
+   "severity": "critical",
+   "description": "Latex allergy (contact dermatitis): use nitrile gloves",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "latex"
+     ],
+     [
+      "dermatitis",
+      "rash",
+      "nitrile",
+      "reaction"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N13-F6",
+   "category": "medication",
+   "section": "A",
+   "severity": "important",
+   "description": "Doxycycline 100 mg PO BD",
+   "check": {
+    "type": "dose",
+    "drug": [
+     "doxycycline"
+    ],
+    "amount": 100,
+    "unit": "mg"
+   }
+  },
+  {
+   "id": "N13-F7",
+   "category": "last_given",
+   "section": "A",
+   "severity": "important",
+   "description": "Doxycycline last given 08:00",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "doxycycline"
+     ],
+     [
+      "08:00",
+      "0800",
+      "8am"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N13-F8",
+   "category": "safety_flag",
+   "section": "S",
+   "severity": "important",
+   "description": "Stage 3 sacral pressure injury, dressing daily",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "sacral",
+      "pressure injury",
+      "pressure ulcer"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N13-F9",
+   "category": "pending",
+   "section": "R",
+   "severity": "important",
+   "description": "Wound care nurse review 27/11",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "wound"
+     ],
+     [
+      "27/11",
+      "tomorrow",
+      "review"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N13-F10",
+   "category": "safety_flag",
+   "section": "R",
+   "severity": "important",
+   "description": "Full resuscitation",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "full resus",
+      "for cpr"
+     ]
+    ]
+   }
+  }
+ ]
+}
