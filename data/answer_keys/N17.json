@@ -1,0 +1,248 @@
+{
+ "note_id": "N17",
+ "_comment": "Drafted by Claude for the owner's review. Wordings and severities are proposals.",
+ "failure_modes": [
+  10,
+  6
+ ],
+ "facts": [
+  {
+   "id": "N17-F1",
+   "category": "uncertainty",
+   "section": "S",
+   "severity": "critical",
+   "description": "UTI is a possibility, not confirmed",
+   "check": {
+    "type": "tag",
+    "target": [
+     "uti",
+     "urinary tract infection"
+    ],
+    "tag": "Suspected-Pending",
+    "forbid": [
+     "confirmed uti",
+     "uti confirmed",
+     "has a uti",
+     "has uti",
+     "diagnosed with uti",
+     "urinary tract infection confirmed",
+     "has a urinary tract infection"
+    ]
+   }
+  },
+  {
+   "id": "N17-F2",
+   "category": "uncertainty",
+   "section": "S",
+   "severity": "critical",
+   "description": "Aspiration pneumonia is a possibility, not confirmed",
+   "check": {
+    "type": "tag",
+    "target": [
+     "aspiration"
+    ],
+    "tag": "Suspected-Pending",
+    "forbid": [
+     "confirmed aspiration",
+     "aspiration pneumonia confirmed",
+     "has aspiration pneumonia",
+     "diagnosed with aspiration"
+    ]
+   }
+  },
+  {
+   "id": "N17-F3",
+   "category": "uncertainty",
+   "section": "S",
+   "severity": "critical",
+   "description": "Delirium is a possibility, not confirmed",
+   "check": {
+    "type": "tag",
+    "target": [
+     "delirium"
+    ],
+    "tag": "Suspected-Pending",
+    "forbid": [
+     "confirmed delirium",
+     "delirium confirmed",
+     "has delirium",
+     "diagnosed with delirium"
+    ]
+   }
+  },
+  {
+   "id": "N17-F4",
+   "category": "pending",
+   "section": "R",
+   "severity": "critical",
+   "description": "Urine MC&S and blood cultures sent, PENDING",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "culture",
+      "mc&s",
+      "mcs"
+     ],
+     [
+      "pending",
+      "awaiting",
+      "awaited",
+      "outstanding",
+      "sent"
+     ]
+    ],
+    "same_sentence": true
+   }
+  },
+  {
+   "id": "N17-F5",
+   "category": "pending",
+   "section": "R",
+   "severity": "important",
+   "description": "CXR report PENDING",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "cxr",
+      "chest x-ray",
+      "chest xray",
+      "x-ray",
+      "chest film"
+     ],
+     [
+      "pending",
+      "awaiting",
+      "awaited",
+      "outstanding",
+      "report"
+     ]
+    ],
+    "same_sentence": true
+   }
+  },
+  {
+   "id": "N17-F6",
+   "category": "deterioration",
+   "section": "O",
+   "severity": "critical",
+   "description": "New confusion compared with baseline (alert and orientated x3)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "new confusion",
+      "acute confusion",
+      "confused",
+      "disorientat",
+      "altered mental",
+      "change in mental"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N17-F7",
+   "category": "objective_value",
+   "section": "O",
+   "severity": "important",
+   "description": "Temperature 38.1 at 10:00",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "38.1"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N17-F8",
+   "category": "medication",
+   "section": "A",
+   "severity": "important",
+   "description": "Ceftriaxone 1 g IV",
+   "check": {
+    "type": "dose",
+    "drug": [
+     "ceftriaxone"
+    ],
+    "amount": 1,
+    "unit": "g"
+   }
+  },
+  {
+   "id": "N17-F9",
+   "category": "last_given",
+   "section": "A",
+   "severity": "important",
+   "description": "Ceftriaxone given 11:05 (after cultures)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "ceftriaxone"
+     ],
+     [
+      "11:05",
+      "1105"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N17-F10",
+   "category": "safety_flag",
+   "section": "B",
+   "severity": "important",
+   "description": "High falls risk; delirium and falls precautions",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "falls"
+     ],
+     [
+      "high",
+      "precaution"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N17-F11",
+   "category": "allergy",
+   "section": "B",
+   "severity": "critical",
+   "description": "No known drug allergies (documented)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "nkda",
+      "no known drug allerg",
+      "no known allerg",
+      "nil known allerg"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N17-F12",
+   "category": "safety_flag",
+   "section": "R",
+   "severity": "important",
+   "description": "Full resuscitation",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "full resus",
+      "for cpr"
+     ]
+    ]
+   }
+  }
+ ]
+}

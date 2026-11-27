@@ -1,0 +1,226 @@
+{
+ "note_id": "N18",
+ "_comment": "Drafted by Claude for the owner's review. Wordings and severities are proposals.",
+ "failure_modes": [
+  11,
+  7
+ ],
+ "facts": [
+  {
+   "id": "N18-F1",
+   "category": "not_documented",
+   "section": "S",
+   "severity": "critical",
+   "description": "The summary must not assume a resuscitation status",
+   "check": {
+    "type": "none_of",
+    "phrases": [
+     "full resuscitation",
+     "full resus",
+     "for cpr",
+     "not for cpr",
+     "for active resus",
+     "dnacpr",
+     "no cpr"
+    ]
+   }
+  },
+  {
+   "id": "N18-F2",
+   "category": "not_documented",
+   "section": "S",
+   "severity": "critical",
+   "description": "The resuscitation plan (ARP) is NOT DOCUMENTED",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "arp",
+      "resuscitation",
+      "cpr"
+     ],
+     [
+      "not documented",
+      "not recorded",
+      "unknown",
+      "not known",
+      "not stated",
+      "unclear",
+      "undocumented",
+      "blank",
+      "to be clarified",
+      "to be confirmed",
+      "not available",
+      "not yet"
+     ]
+    ],
+    "same_sentence": true
+   }
+  },
+  {
+   "id": "N18-F3",
+   "category": "not_documented",
+   "section": "B",
+   "severity": "critical",
+   "description": "Weight is NOT DOCUMENTED (never estimated)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "weight"
+     ],
+     [
+      "not documented",
+      "not recorded",
+      "unknown",
+      "not known",
+      "not stated",
+      "unclear",
+      "undocumented",
+      "blank",
+      "not available",
+      "not yet",
+      "not weighed",
+      "to be obtained",
+      "unmeasured"
+     ]
+    ],
+    "same_sentence": true
+   }
+  },
+  {
+   "id": "N18-F4",
+   "category": "allergy",
+   "section": "B",
+   "severity": "critical",
+   "description": "Penicillin allergy (rash)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "penicillin"
+     ],
+     [
+      "rash"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N18-F5",
+   "category": "safety_flag",
+   "section": "S",
+   "severity": "important",
+   "description": "Atrial fibrillation with rapid ventricular response",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "atrial fibrillation",
+      "af ",
+      "af,",
+      "af.",
+      "rvr",
+      "rapid ventricular"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N18-F6",
+   "category": "medication",
+   "section": "A",
+   "severity": "important",
+   "description": "Metoprolol 25 mg PO",
+   "check": {
+    "type": "dose",
+    "drug": [
+     "metoprolol"
+    ],
+    "amount": 25,
+    "unit": "mg"
+   }
+  },
+  {
+   "id": "N18-F7",
+   "category": "last_given",
+   "section": "A",
+   "severity": "important",
+   "description": "Metoprolol given 12:00",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "metoprolol"
+     ],
+     [
+      "12:00",
+      "1200"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N18-F8",
+   "category": "pending",
+   "section": "R",
+   "severity": "important",
+   "description": "Troponin and TFTs PENDING",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "troponin",
+      "tft",
+      "thyroid"
+     ],
+     [
+      "pending",
+      "awaiting",
+      "awaited",
+      "outstanding"
+     ]
+    ],
+    "same_sentence": true
+   }
+  },
+  {
+   "id": "N18-F9",
+   "category": "pending",
+   "section": "R",
+   "severity": "important",
+   "description": "Cardiology review requested, not yet seen",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "cardiology"
+     ],
+     [
+      "requested",
+      "not yet",
+      "awaiting",
+      "pending",
+      "review"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N18-F10",
+   "category": "safety_flag",
+   "section": "R",
+   "severity": "important",
+   "description": "On telemetry",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "telemetry",
+      "cardiac monitor"
+     ]
+    ]
+   }
+  }
+ ]
+}

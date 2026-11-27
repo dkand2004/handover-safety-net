@@ -1,0 +1,200 @@
+{
+ "note_id": "N16",
+ "_comment": "Drafted by Claude for the owner's review. Wordings and severities are proposals.",
+ "failure_modes": [
+  7,
+  13
+ ],
+ "facts": [
+  {
+   "id": "N16-F1",
+   "category": "arp",
+   "section": "S",
+   "severity": "critical",
+   "description": "The CURRENT ARP is Not for CPR (the 25/11 'full resuscitation' entry is stale)",
+   "check": {
+    "type": "latest_wins",
+    "value": [
+     "not for cpr",
+     "not for resus",
+     "not for cardiopulmonary",
+     "dnacpr",
+     "no cpr"
+    ],
+    "stale": [
+     "for full resus",
+     "currently full",
+     "status: full",
+     "remains full",
+     "full resuscitation status",
+     "full cpr status"
+    ]
+   }
+  },
+  {
+   "id": "N16-F2",
+   "category": "arp",
+   "section": "S",
+   "severity": "important",
+   "description": "ARP completed and signed 26/11/2026",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "arp",
+      "resuscitation plan",
+      "not for cpr"
+     ],
+     [
+      "26/11",
+      "signed",
+      "completed"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N16-F3",
+   "category": "arp",
+   "section": "S",
+   "severity": "critical",
+   "description": "Not for intubation or ICU",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "intubat",
+      "icu",
+      "intensive care"
+     ],
+     [
+      "not for",
+      "no ",
+      "not to",
+      "declin"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N16-F4",
+   "category": "arp",
+   "section": "S",
+   "severity": "important",
+   "description": "For MET call and ward-based treatment including NIV",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "met call",
+      "met team",
+      "medical emergency team",
+      "ward-based",
+      "ward based"
+     ],
+     [
+      "niv",
+      "non-invasive",
+      "antibiotic",
+      "oxygen",
+      "treatment"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N16-F5",
+   "category": "safety_flag",
+   "section": "A",
+   "severity": "critical",
+   "description": "Oxygen target SpO2 88-92% (severe COPD)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "88"
+     ],
+     [
+      "92"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N16-F6",
+   "category": "allergy",
+   "section": "B",
+   "severity": "critical",
+   "description": "Amoxicillin allergy (urticaria)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "amoxicillin"
+     ],
+     [
+      "hives",
+      "urticaria",
+      "rash"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N16-F7",
+   "category": "medication",
+   "section": "A",
+   "severity": "important",
+   "description": "Prednisolone 40 mg PO",
+   "check": {
+    "type": "dose",
+    "drug": [
+     "prednisolone"
+    ],
+    "amount": 40,
+    "unit": "mg"
+   }
+  },
+  {
+   "id": "N16-F8",
+   "category": "baseline",
+   "section": "B",
+   "severity": "important",
+   "description": "Severe COPD on home oxygen 2 L/min",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "copd"
+     ],
+     [
+      "2 l",
+      "2l",
+      "home oxygen",
+      "home o2"
+     ]
+    ]
+   }
+  },
+  {
+   "id": "N16-F9",
+   "category": "pending",
+   "section": "R",
+   "severity": "important",
+   "description": "Palliative care review today (27/11)",
+   "check": {
+    "type": "all_of_groups",
+    "groups": [
+     [
+      "palliative"
+     ],
+     [
+      "review",
+      "today",
+      "27/11"
+     ]
+    ]
+   }
+  }
+ ]
+}

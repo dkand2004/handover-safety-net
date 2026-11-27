@@ -14,7 +14,7 @@ Doses are still compared strictly, as numbers with units, so a nearly right dose
 """
 import re
 
-UNITS = r"(mg|mcg|g|ml|units?|iu|%)"
+UNITS = r"(mg|mcg|kg|g|ml|units?|iu|%)"
 NUM_UNIT = re.compile(r"(\d+(?:\.\d+)?)\s*" + UNITS + r"\b")
 # Doubt markers apply to a DIAGNOSIS. Words about results ("pending", "awaiting") are deliberately NOT here: they would let
 # "troponin pending" in the next sentence wrongly vouch for an unrelated diagnosis. (Found by a mutation test.)
