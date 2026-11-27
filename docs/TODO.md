@@ -13,5 +13,5 @@
 - [x] Owner wrote N10 and N11 (`data/synthetic_notes/`); keys converted and tested (`data/answer_keys/`, `tests/test_owner_notes.py`)
 - [x] Owner's N10/N11 review decisions applied (N11 stamp 12:30, ARP wording, ARP in S, codeine intolerance, dated 22:00 row, derived check for vague phrases)
 - [x] Pilot: N05, N10 and N11 with answer keys (N05 clinically reviewed by the owner and updated)
-- [x] All 18 notes and keys drafted (N01-N15 reviewed; N16-N18 awaiting owner review)
+- [x] All 18 notes and keys drafted and clinically reviewed by the owner (N16-N18 approved 27/11/2026, no changes)
 - [ ] Rule-based baseline, Claude arm, hybrid arm, scoring, tests, results

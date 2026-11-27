@@ -46,7 +46,7 @@ All 13 failure modes are covered; every mode now has at least 2 notes.
 | 12 | Vague or subjective language passes through | N10, N15 |
 | 13 | Stale information outranks recent | N08, N09, N16 |
 
-## Status (27/11/2026): all 18 notes drafted; N16-N18 awaiting owner review
+## Status (27/11/2026): all 18 notes drafted and reviewed
 
 ## Next steps
 1. Owner approves the answer-key format (`answer_key_format.md`).
