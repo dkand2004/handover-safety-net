@@ -45,7 +45,9 @@ def check_dose(t, c):
     for drug in c["drug"]:
         for m in re.finditer(re.escape(norm(drug)), t):
             window_after = t[m.end(): m.end() + 60]
-            window_before = t[max(0, m.start() - 25): m.start()]
+            # the number BEFORE a drug name only counts if no other item sits in between (a full stop, semicolon,
+            # closing bracket, table bar or list dash ends the previous item, so '(max 4 g in 24 h) - oxycodone PRN' is not '4 g oxycodone')
+            window_before = re.split(r"[.;)|]|\s-\s", t[max(0, m.start() - 25): m.start()])[-1]
             nu = NUM_UNIT.search(window_after) or NUM_UNIT.search(window_before)
             if nu:
                 same = float(nu.group(1)) == float(c["amount"]) and _unit(nu.group(2)) == _unit(c["unit"])
