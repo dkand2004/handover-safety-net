@@ -9,6 +9,9 @@ import re
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from budget import budget_for  # noqa: E402
+
 ROOT = Path(__file__).resolve().parents[1]
 
 # One generic vocabulary of words that nurses flag at handover (not derived from the answer keys).
@@ -51,6 +54,7 @@ def field(b: dict, key: str) -> str:
 
 
 def summarise(note: str) -> str:
+    """Build the summary within the shared word budget (src/budget.py), keeping the highest-priority items first."""
     b = banner(note)
     notes = section(note, "Note")
     entries = [e.strip() for e in re.split(r"\n(?=\[\d)", notes) if e.strip()]
@@ -64,39 +68,51 @@ def summarise(note: str) -> str:
         m = re.search(r"(?:wt|weight)\s*:?\s*([\d.]+)\s*kg", note, re.I)
         weight = f"{m.group(1)} kg" if m else "not documented"
 
-    out = []
-    out.append("I - IDENTIFICATION")
-    out.append(f"{b.get('PATIENT','')}, {b.get('AGE/SEX','')}, {b.get('HOSPITAL (FICTIONAL)','')}, {b.get('WARD / BED','')}.")
-    out.append("S - SITUATION AND STATUS")
-    out.append(f"Admitted for: {field(b,'REASON FOR ADMISSION')}.")
-    out.append(f"Resuscitation / ARP: {field(b,'ARP / RESUSCITATION STATUS')}.")
-    out.append("O - OBSERVATIONS")
+    # Each item is (priority, ISOBAR section, text). Lower priority number = kept first when words run out.
+    items = [
+        (1, "I", f"{b.get('PATIENT','')}, {b.get('AGE/SEX','')}, {b.get('WARD / BED','')}."),
+        (1, "S", f"Admitted: {field(b,'REASON FOR ADMISSION')}."),
+        (1, "S", f"ARP/resuscitation: {field(b,'ARP / RESUSCITATION STATUS')}."),
+        (1, "B", f"Allergies: {field(b,'ALLERGIES / ADVERSE REACTIONS')}."),
+        (1, "B", f"Weight: {weight}."),
+    ]
+    for r in meds:
+        d = dict(zip((h.lower() for h in mh), r))
+        reg = d.get("regular/prn", "")
+        items.append((2, "A", f"{d.get('drug','')} {d.get('dose','')} {d.get('route','')} {d.get('frequency','')} {reg}; last given {d.get('last given','')}.".replace("  ", " ")))
+    for p in plan:
+        items.append((3, "R", "Plan: " + p + ("" if p.endswith(".") else ".")))
     if obs:
         last = obs[-1]
-        out.append("Latest obs: " + ", ".join(f"{h} {v}" for h, v in zip(hdr, last)) + ".")
-        qi = hdr.index("Q-ADDS") if "Q-ADDS" in hdr else None
-        if qi is not None:
-            sc = [r[qi] for r in obs if len(r) > qi]
+        items.append((4, "O", "Latest obs: " + ", ".join(f"{h} {v}" for h, v in zip(hdr, last)) + "."))
+        if "Q-ADDS" in hdr:
+            qi = hdr.index("Q-ADDS"); sc = [r[qi] for r in obs if len(r) > qi]
             nums = [int(x) for x in sc if x.isdigit()]
-            trend = " -> ".join(sc)
-            out.append(f"Q-ADDS trend: {trend}" + (" (rising)" if len(nums) > 1 and nums[-1] > nums[0] else "") + ".")
-    out.append("B - BACKGROUND AND HISTORY")
-    out.append(f"Allergies: {field(b,'ALLERGIES / ADVERSE REACTIONS')}.")
-    out.append(f"Baseline: {field(b,'BASELINE')}.")
-    out.append(f"Weight: {weight}.")
-    out.append("A - ASSESSMENT AND ACTIONS")
-    for r in meds:
-        out.append("Medication: " + " | ".join(f"{h}: {v}" for h, v in zip(mh, r)) + ".")
-    kept = []
-    for e in entries:
-        for s in sentences(re.sub(r"^\[[^\]]*\]\s*", "", e)):
-            if VOCAB.search(s) and s not in kept:
-                kept.append(s)
-    for s in kept:
-        out.append("Note: " + s + ".")
-    out.append("R - RESPONSIBILITY AND RISK MANAGEMENT (pending and plan)")
-    for p in plan:
-        out.append("- " + p)
+            items.append((4, "O", "Q-ADDS trend: " + " -> ".join(sc) + (" (rising)." if len(nums) > 1 and nums == sorted(nums) and nums[-1] > nums[0]
+                                                    else f" (peak {max(nums)})." if len(nums) > 1 and max(nums) > nums[-1] else ".")))
+    items.append((5, "B", f"Baseline: {field(b,'BASELINE')}."))
+    # Remaining note sentences: more handover words first, and later entries before earlier ones when tied.
+    cand = []
+    for ei, e in enumerate(entries):
+        for s_ in sentences(re.sub(r"^\[[^\]]*\]\s*", "", e)):
+            hits = len(set(m.lower() for m in VOCAB.findall(s_)))
+            if hits and s_ not in [c[2] for c in cand]:
+                cand.append((-hits, -ei, s_))
+    for _, _, s_ in sorted(cand):
+        items.append((6, "A", s_ + ("" if s_.endswith(".") else ".")))
+
+    budget = budget_for(note)
+    heads = {"I": "I:", "S": "S:", "O": "O:", "B": "B:", "A": "A:", "R": "R:"}
+    used, chosen = 0, []
+    for pr, sec, text in sorted(items, key=lambda x: x[0]):          # stable: keeps source order inside a priority
+        cost = len(text.split()) + (0 if any(c[1] == sec for c in chosen) else 1)   # a section heading costs one word
+        if used + cost <= budget:
+            chosen.append((pr, sec, text)); used += cost
+    out = []
+    for sec in "ISOBAR":
+        txt = [t for _, sc, t in chosen if sc == sec]
+        if txt:
+            out.append(heads[sec] + " " + " ".join(txt))
     return "\n".join(out)
 
 

@@ -14,10 +14,11 @@
 - [x] Owner's N10/N11 review decisions applied (N11 stamp 12:30, ARP wording, ARP in S, codeine intolerance, dated 22:00 row, derived check for vague phrases)
 - [x] Pilot: N05, N10 and N11 with answer keys (N05 clinically reviewed by the owner and updated)
 - [x] All 18 notes and keys drafted and clinically reviewed by the owner (N16-N18 approved 27/11/2026, no changes)
-- [x] Rule-based baseline (src/baseline.py) and scorer (src/score_arm.py): results in results/baseline_summary.md
+- [x] Rule-based baseline (src/baseline.py), shared 40% word budget (src/budget.py) and scorer (src/score_arm.py): results/baseline_summary.md (unbudgeted comparison: results/baseline_unbudgeted_summary.md)
 - [ ] Claude arm, hybrid arm, real runs, human review, results
 
 ## Decisions made (28/11/2026)
 - Stale-ARP matcher left as is (1A); count human-overturned "altered" flags in the results.
 - Build the rule-based baseline first (2A). Hybrid design 5A: rules lock safety items verbatim, Claude writes around them, final rule pass re-adds anything missing. Rules must never read the answer keys.
 - Model for the Claude arm (tentative): Sonnet 5.5 (`claude-sonnet-5-5`), kept fixed across arms. Key handling still to decide.
+- Word budget decided 28/11/2026: each summary may use at most 40% of the note's words (rounded down to a multiple of 5); applies to every arm; over-budget summaries are flagged in the results.

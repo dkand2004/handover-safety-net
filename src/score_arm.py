@@ -11,6 +11,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
+from budget import budget_for, words  # noqa: E402
 from check_facts import check_summary  # noqa: E402
 
 
@@ -23,7 +24,9 @@ def score(arm: str):
             continue
         key = json.loads(kp.read_text())
         note = (ROOT / "data" / "synthetic_notes" / f"{n}.md").read_text()
-        r = check_summary(key, note, sp.read_text())
+        summary = sp.read_text()
+        r = check_summary(key, note, summary)
+        w, bud = words(summary), budget_for(note)
         c = Counter(); cc = Counter()
         for f in key["facts"]:
             st = r["facts"][f["id"]]
@@ -33,7 +36,7 @@ def score(arm: str):
             if f["severity"] == "critical": cc[st] += 1
         derived = r.get("derived", {})
         per_note.append((n, c, cc, len(r["unsafe_notation"]), len(r["invented_numbers"]),
-                         sum(1 for v in derived.values() if v != "kept")))
+                         sum(1 for v in derived.values() if v != "kept"), w, bud))
     return rows, per_note
 
 
@@ -44,13 +47,16 @@ def main(arm: str):
         w = csv.DictWriter(fh, fieldnames=list(rows[0])); w.writeheader(); w.writerows(rows)
     tot, crit = Counter(), Counter()
     lines = [f"# {arm}: scored against the answer keys", "",
-             "| note | facts kept / total | critical kept / total | altered | lost | unsafe notation | invented numbers | derived failures |",
-             "|---|---|---|---|---|---|---|---|"]
-    for n, c, cc, u, i, d in per_note:
+             "| note | words / budget | facts kept / total | critical kept / total | altered | lost | unsafe notation | invented numbers | derived failures |",
+             "|---|---|---|---|---|---|---|---|---|"]
+    over = 0
+    for n, c, cc, u, i, d, w, bud in per_note:
         tot.update(c); crit.update(cc)
-        lines.append(f"| {n} | {c['kept']}/{sum(c.values())} | {cc['kept']}/{sum(cc.values())} | {c['altered']} | {c['lost']} | {u} | {i} | {d} |")
+        flag = " OVER" if w > bud else ""
+        over += w > bud
+        lines.append(f"| {n} | {w}/{bud}{flag} | {c['kept']}/{sum(c.values())} | {cc['kept']}/{sum(cc.values())} | {c['altered']} | {c['lost']} | {u} | {i} | {d} |")
     T, C = sum(tot.values()), sum(crit.values())
-    lines += ["", f"**Overall:** {tot['kept']}/{T} facts kept ({100*tot['kept']/T:.0f}%); "
+    lines += ["", f"**Length:** {over} of {len(per_note)} summaries over the word budget (40% of the note).", "", f"**Overall:** {tot['kept']}/{T} facts kept ({100*tot['kept']/T:.0f}%); "
               f"critical {crit['kept']}/{C} kept ({100*crit['kept']/C:.0f}%), {crit['altered']} altered, {crit['lost']} lost.", "",
               "## Critical facts that were altered or lost", "", "| note | fact | status | what the fact says |", "|---|---|---|---|"]
     for r in rows:

@@ -19,7 +19,7 @@ def test_baseline_never_reads_answer_keys():
 
 def test_not_documented_is_said_not_assumed():
     t = s("N18")
-    assert "Resuscitation / ARP: not documented" in t and "Weight: not documented" in t
+    assert "ARP/resuscitation: not documented" in t and "Weight: not documented" in t
     assert "Allergies: not documented" in s("N04")
 
 
@@ -30,11 +30,24 @@ def test_label_variants_still_found():
 def test_has_every_isobar_section_and_is_shorter_than_note():
     for n in ("N05", "N10", "N16"):
         t = s(n)
-        for h in ("I - ", "S - ", "O - ", "B - ", "A - ", "R - "):
+        for h in ("I:", "S:", "O:", "B:", "A:", "R:"):
             assert h in t
         assert len(t.split()) < len((ROOT / f"data/synthetic_notes/{n}.md").read_text().split())
 
 
+def test_summaries_respect_the_word_budget():
+    from budget import budget_for, words
+    for p in sorted((ROOT / "data/synthetic_notes").glob("N*.md")):
+        note = p.read_text()
+        assert words(summarise(note)) <= budget_for(note), p.name
+    assert budget_for((ROOT / "data/synthetic_notes/N05.md").read_text()) == 160
+
+
+def test_trend_label_is_not_misleading():
+    t = s("N17")
+    assert "0 -> 7 -> 4 (peak 7)" in t and "(rising)" not in t.split("Q-ADDS trend")[1].split("\n")[0]
+    assert "(rising)" in s("N08")
+
+
 def test_known_baseline_limits_are_real():
     assert "full resuscitation" in s("N16").lower()   # naive rules copy the stale 25/11 entry
-    assert "much better" in s("N15").lower()           # and the subjective quote

@@ -6,7 +6,7 @@ baseline,N01,N01-F4,critical,last_given,A,kept,Enoxaparin last given at 06:00 (n
 baseline,N01,N01-F5,critical,safety_flag,B,kept,High falls risk
 baseline,N01,N01-F6,important,baseline,B,kept,"Mild dementia, intermittent confusion"
 baseline,N01,N01-F7,critical,allergy,B,kept,No known drug allergies (documented)
-baseline,N01,N01-F8,important,baseline,A,kept,Weightbearing as tolerated on the left leg
+baseline,N01,N01-F8,important,baseline,A,lost,Weightbearing as tolerated on the left leg
 baseline,N01,N01-F9,important,baseline,A,kept,Needs 2 staff assist to mobilise/reposition
 baseline,N01,N01-F10,important,medication,A,kept,Oxycodone IR 2.5 mg PO PRN
 baseline,N01,N01-F11,important,pending,R,kept,Orthogeriatric review pending
@@ -41,19 +41,19 @@ baseline,N04,N04-F5,important,medication,A,kept,Hartmann's 1 L IV over 4 hours f
 baseline,N04,N04-F6,important,medication,A,kept,Ondansetron 4 mg IV
 baseline,N04,N04-F7,important,pending,R,kept,Repeat UEC due 20:00 (pending)
 baseline,N04,N04-F8,important,safety_flag,R,kept,Strict fluid balance chart
-baseline,N04,N04-F9,important,baseline,B,kept,History is limited; lives alone per ambulance; medication list unverified
+baseline,N04,N04-F9,important,baseline,B,lost,History is limited; lives alone per ambulance; medication list unverified
 baseline,N04,N04-F10,important,safety_flag,S,kept,Full resuscitation
 baseline,N05,N05-F1,critical,uncertainty,S,kept,"NSTEMI is suspected, not confirmed"
-baseline,N05,N05-F2,important,uncertainty,S,kept,"Other diagnoses remain possible (unstable angina, musculoskeletal pain)"
+baseline,N05,N05-F2,important,uncertainty,S,lost,"Other diagnoses remain possible (unstable angina, musculoskeletal pain)"
 baseline,N05,N05-F3,critical,pending,R,kept,Repeat hs-troponin (drawn 01:45) result is pending
 baseline,N05,N05-F4,important,pending,R,kept,Cardiology Reg (Dr Okafor) will review once the repeat troponin is back
-baseline,N05,N05-F5,critical,objective_value,O,kept,First hs-troponin 28 ng/L (reference below 14)
-baseline,N05,N05-F6,critical,objective_value,O,kept,"ECG: 1 mm ST depression V5-V6, no ST elevation"
+baseline,N05,N05-F5,critical,objective_value,O,lost,First hs-troponin 28 ng/L (reference below 14)
+baseline,N05,N05-F6,critical,objective_value,O,lost,"ECG: 1 mm ST depression V5-V6, no ST elevation"
 baseline,N05,N05-F7,critical,medication,A,kept,Aspirin 300 mg given (stat)
 baseline,N05,N05-F8,important,last_given,A,kept,Aspirin given at 23:15
 baseline,N05,N05-F9,important,medication,A,kept,GTN 400 mcg SL given at 22:50
 baseline,N05,N05-F10,critical,allergy,B,kept,No known drug allergies (documented)
-baseline,N05,N05-F11,important,objective_value,O,kept,Pain-free since 23:10 (0/10)
+baseline,N05,N05-F11,important,objective_value,O,lost,Pain-free since 23:10 (0/10)
 baseline,N05,N05-F12,important,safety_flag,R,kept,On telemetry / cardiac monitoring
 baseline,N06,N06-F1,critical,medication,A,kept,"Insulin glargine 20 units SC (written 'units', never 'U')"
 baseline,N06,N06-F2,critical,last_given,A,kept,Glargine last given 22:00 on 24/11
@@ -73,11 +73,11 @@ baseline,N07,N07-F5,critical,medication,A,kept,Paracetamol 1 g
 baseline,N07,N07-F6,critical,last_given,A,kept,Paracetamol last given 12:00 (next due 18:00)
 baseline,N07,N07-F7,important,medication,A,kept,"Paracetamol is regular, 4 g maximum in 24 h"
 baseline,N07,N07-F8,critical,allergy,B,kept,NSAIDs / ibuprofen cause an asthma exacerbation (avoid)
-baseline,N07,N07-F9,important,objective_value,O,kept,"Drowsy after the 13:10 dose (sedation score 1), rousable"
+baseline,N07,N07-F9,important,objective_value,O,lost,"Drowsy after the 13:10 dose (sedation score 1), rousable"
 baseline,N07,N07-F10,important,pending,R,kept,Discharge tomorrow if pain remains controlled
 baseline,N08,N08-F1,critical,deterioration,A,kept,Latest Q-ADDS is 10
 baseline,N08,N08-F2,critical,deterioration,A,kept,The trend is a rise over the shift (0 -> 2 -> 5 -> 10)
-baseline,N08,N08-F3,critical,deterioration,A,kept,MET call made at 15:40
+baseline,N08,N08-F3,critical,deterioration,A,lost,MET call made at 15:40
 baseline,N08,N08-F4,critical,vague_language,S,kept,The summary must not describe the patient as stable (the 06:30 entry is stale)
 baseline,N08,N08-F5,critical,pending,R,kept,Urgent CT abdomen/pelvis requested but NOT yet done
 baseline,N08,N08-F6,important,uncertainty,S,kept,"Possible anastomotic leak or sepsis (suspected, not confirmed)"
@@ -104,7 +104,7 @@ baseline,N10,N10-F4,critical,objective_value,O,kept,"Temperature 38.4 and rising
 baseline,N10,N10-F5,critical,pending,R,kept,"Surgical RMO (Dr Patel) paged 06:10, review/callback awaited"
 baseline,N10,N10-F6,important,pending,R,kept,Blood cultures and FBC/EUC/CRP due 06:30
 baseline,N10,N10-F7,critical,allergy,B,kept,Codeine intolerance (severe nausea and vomiting)
-baseline,N10,N10-F8,important,objective_value,O,kept,"Pain 7/10 earlier, now 4/10 on movement"
+baseline,N10,N10-F8,important,objective_value,O,lost,"Pain 7/10 earlier, now 4/10 on movement"
 baseline,N10,N10-F9,important,medication,A,kept,Oxycodone IR 5 mg PO PRN last given
 baseline,N10,N10-F10,important,last_given,A,kept,Last PRN oxycodone and ondansetron given at 01:40
 baseline,N10,N10-F11,important,objective_value,S,lost,"About 3 hours' sleep, woke 3 times"
@@ -112,7 +112,7 @@ baseline,N10,N10-F12,critical,vague_language,S,kept,The summary must not describ
 baseline,N11,N11-F1,critical,arp,S,kept,Not for CPR
 baseline,N11,N11-F2,critical,arp,S,kept,"Not for intubation / ICU (ward-based treatment, including antibiotics and oxygen)"
 baseline,N11,N11-F3,important,arp,S,kept,ARP signed 21/11/2026 by Dr Callahan
-baseline,N11,N11-F4,critical,baseline,B,kept,"Baseline moderate Alzheimer's dementia, disorientated to time/place"
+baseline,N11,N11-F4,critical,baseline,B,lost,"Baseline moderate Alzheimer's dementia, disorientated to time/place"
 baseline,N11,N11-F5,important,baseline,B,kept,Mobilises with 4WW and 1x assist
 baseline,N11,N11-F6,critical,safety_flag,B,kept,"Dysphagia: IDDSI Level 5 minced and moist diet, Level 2 mildly thick fluids"
 baseline,N11,N11-F7,critical,safety_flag,B,kept,1:1 supervision and upright positioning for oral intake
@@ -128,14 +128,14 @@ baseline,N12,N12-F3,critical,pending,R,kept,Repeat INR (drawn 06:15) result is P
 baseline,N12,N12-F4,important,objective_value,O,kept,Procedure target INR below 1.5
 baseline,N12,N12-F5,important,pending,R,kept,Colonoscopy with polypectomy planned 27/11 at 08:00
 baseline,N12,N12-F6,important,med_change,R,kept,Proceduralist to advise when to restart warfarin after the procedure
-baseline,N12,N12-F7,important,baseline,B,kept,Atrial fibrillation on warfarin
+baseline,N12,N12-F7,important,baseline,B,lost,Atrial fibrillation on warfarin
 baseline,N12,N12-F8,important,safety_flag,R,kept,NBM from midnight
 baseline,N12,N12-F9,critical,allergy,B,kept,No known drug allergies (documented)
 baseline,N12,N12-F10,important,safety_flag,R,kept,Full resuscitation
 baseline,N12,N12-F11,critical,med_change,A,kept,The summary must not say warfarin is continued or given tonight
 baseline,N13,N13-F1,critical,isolation,S,kept,MRSA contact precautions are in place
 baseline,N13,N13-F2,important,isolation,A,kept,"Single room, gown and gloves for all direct contact"
-baseline,N13,N13-F3,critical,safety_flag,B,kept,High falls risk (bed alarm on)
+baseline,N13,N13-F3,critical,safety_flag,B,lost,High falls risk (bed alarm on)
 baseline,N13,N13-F4,critical,baseline,B,kept,Mobilises with 4WW and 1 assist
 baseline,N13,N13-F5,critical,allergy,B,kept,Latex allergy (contact dermatitis): use nitrile gloves
 baseline,N13,N13-F6,important,medication,A,kept,Doxycycline 100 mg PO BD
@@ -147,8 +147,8 @@ baseline,N14,N14-F1,critical,device,A,kept,Urinary catheter (IDC) is in situ
 baseline,N14,N14-F2,important,pending,R,kept,IDC removal is planned for 27/11 at 06:00
 baseline,N14,N14-F3,important,pending,R,kept,"After removal: trial of void, bladder scan if no void in 6 hours"
 baseline,N14,N14-F4,important,device,A,kept,Wound drain (Redivac) is in situ and stays
-baseline,N14,N14-F5,important,objective_value,O,kept,Drain output 30 mL serous over the last 24 h
-baseline,N14,N14-F6,important,objective_value,O,kept,Urine output 1450 mL over the last 24 h
+baseline,N14,N14-F5,important,objective_value,O,lost,Drain output 30 mL serous over the last 24 h
+baseline,N14,N14-F6,important,objective_value,O,lost,Urine output 1450 mL over the last 24 h
 baseline,N14,N14-F7,important,pending,R,kept,Surgical team to review the drain tomorrow (removal not yet planned)
 baseline,N14,N14-F8,important,safety_flag,S,kept,Day 3 post total abdominal hysterectomy
 baseline,N14,N14-F9,critical,allergy,B,kept,No known drug allergies (documented)
@@ -158,7 +158,7 @@ baseline,N15,N15-F2,critical,last_given,A,kept,Furosemide last given 14:00
 baseline,N15,N15-F3,critical,objective_value,O,kept,Latest SpO2 91% on room air
 baseline,N15,N15-F4,critical,deterioration,A,kept,Latest Q-ADDS is 6
 baseline,N15,N15-F5,critical,deterioration,A,kept,Breathlessness is WORSE this afternoon (Q-ADDS 1 -> 6)
-baseline,N15,N15-F6,critical,vague_language,S,altered,The summary must not describe the patient as better or improved overall (subjective quotes are not objective)
+baseline,N15,N15-F6,critical,vague_language,S,kept,The summary must not describe the patient as better or improved overall (subjective quotes are not objective)
 baseline,N15,N15-F7,critical,objective_value,O,kept,K 3.4 (bloods 11:00)
 baseline,N15,N15-F8,important,pending,R,kept,Repeat UEC 06:00 tomorrow
 baseline,N15,N15-F9,important,pending,R,kept,RMO (Dr Lee) review awaited
@@ -176,13 +176,13 @@ baseline,N16,N16-F6,critical,allergy,B,kept,Amoxicillin allergy (urticaria)
 baseline,N16,N16-F7,important,medication,A,kept,Prednisolone 40 mg PO
 baseline,N16,N16-F8,important,baseline,B,kept,Severe COPD on home oxygen 2 L/min
 baseline,N16,N16-F9,important,pending,R,kept,Palliative care review today (27/11)
-baseline,N17,N17-F1,critical,uncertainty,S,kept,"UTI is a possibility, not confirmed"
-baseline,N17,N17-F2,critical,uncertainty,S,kept,"Aspiration pneumonia is a possibility, not confirmed"
-baseline,N17,N17-F3,critical,uncertainty,S,kept,"Delirium is a possibility, not confirmed"
+baseline,N17,N17-F1,critical,uncertainty,S,altered,"UTI is a possibility, not confirmed"
+baseline,N17,N17-F2,critical,uncertainty,S,lost,"Aspiration pneumonia is a possibility, not confirmed"
+baseline,N17,N17-F3,critical,uncertainty,S,altered,"Delirium is a possibility, not confirmed"
 baseline,N17,N17-F4,critical,pending,R,kept,"Urine MC&S and blood cultures sent, PENDING"
 baseline,N17,N17-F5,important,pending,R,kept,CXR report PENDING
 baseline,N17,N17-F6,critical,deterioration,O,kept,New confusion compared with baseline (alert and orientated x3)
-baseline,N17,N17-F7,important,objective_value,O,kept,Temperature 38.1 at 10:00
+baseline,N17,N17-F7,important,objective_value,O,lost,Temperature 38.1 at 10:00
 baseline,N17,N17-F8,important,medication,A,kept,Ceftriaxone 1 g IV
 baseline,N17,N17-F9,important,last_given,A,kept,Ceftriaxone given 11:05 (after cultures)
 baseline,N17,N17-F10,important,safety_flag,B,kept,High falls risk; delirium and falls precautions
